@@ -1,0 +1,49 @@
+from datetime import date,datetime
+from typing import Annotated,Optional
+from pydantic import BaseModel,Field,ConfigDict
+
+class LocalAuthor(BaseModel):
+    id:int
+    username:str
+
+class LocalCategory(BaseModel):
+    id:int
+    name:str
+
+class LocalTags(BaseModel):
+    id:int
+    name:str
+
+class ArticleRequest(BaseModel):
+    title: str = Field(..., max_length=200, description="文章标题")
+    content: str = Field(..., description="文章内容（Markdown 格式）")
+    summary: Optional[str] = Field(None, max_length=500, description="文章摘要")
+    cover_image: Optional[str] = Field(None, description="封面图路径")
+    category_id: int = Field(..., description="分类ID")
+    tag_ids: list[int] = Field(default_factory=list, description="标签列表")
+    is_private: bool = Field(default=False, description="是否私密")
+    author_id: int = Field(default=0, description="作者id")
+
+class ArticleResponse(BaseModel):
+    id: int = Field(..., description="文章ID")
+    title: str = Field(..., max_length=200, description="文章标题")
+    content: str = Field(..., description="文章内容（Markdown 格式）")
+    summary: Optional[str] = Field(None, max_length=500, description="文章摘要")
+    cover_image: Optional[str] = Field(None, description="封面图路径")
+    category_id: int = Field(..., description="分类ID")
+    author_id: int = Field(..., description="作者ID")
+    is_private: bool = Field(default=False, description="是否私密")
+    view_count: int = Field(default=0, description="浏览次数")
+    like_count: int = Field(default=0, description="点赞数")
+    comment_count: int = Field(default=0, description="评论数")
+    created_at: datetime = Field(..., description="创建时间")
+    updated_at: datetime = Field(..., description="更新时间")
+
+    # 作者
+    author:Optional[LocalAuthor] = Field(default=None, description="作者时间")
+    # 分类
+    category: Optional[LocalCategory] = Field(default=None, description="分类详情")
+    # 标签
+    tags: list[LocalTags] = Field(default_factory=list, description="标签列表")
+    
+    model_config = ConfigDict(from_attributes=True)

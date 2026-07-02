@@ -1,0 +1,9 @@
+{
+  "code": 200,
+  "message": "success",
+  "data": {
+    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyIiwiZXhwIjoxNzgyOTY5MTYxLCJ0eXBlIjoiYWNjZXNzIn0.bfjz8gWxfg0KTmabBkD3-6PL_uGJTCimloerCNBm9tc",
+    "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyIiwiZXhwIjoxNzgzNTcyMTYxLCJ0eXBlIjoicmVmcmVzaCJ9.jx9onldQSL7gxzeyiZesJxeoR2QDOhtWjjTr05OpSUI",
+    "token_type": "bearer"
+  }
+}
