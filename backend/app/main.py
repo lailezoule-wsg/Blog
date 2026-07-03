@@ -10,7 +10,7 @@ from app.models import Base
 
 from app.utils.exceptions import setup_exception_handlers
 
-from app.routers import user,tag,subscription,comment,category,article
+from app.routers import user,tag,subscription,category,article
 
 # 文件创建
 settings.ensure_all_dirs()
@@ -45,7 +45,6 @@ setup_exception_handlers(app)
 app.include_router(user.router)
 app.include_router(tag.router)
 app.include_router(category.router)
-app.include_router(comment.router)
 app.include_router(article.router)
 app.include_router(subscription.router)
 

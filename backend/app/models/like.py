@@ -11,8 +11,8 @@ class Like(CreateTimeBase,Base):
     __tablename__ = "likes"
 
     id : Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
-    user_id : Mapped[int] = mapped_column(Integer, ForeignKey("users.id"), nullable=False)
-    article_id : Mapped[int] = mapped_column(Integer, ForeignKey("articles.id"), nullable=False)
+    user_id : Mapped[int] = mapped_column(Integer, ForeignKey("users.id",ondelete="CASCADE"), nullable=False)
+    article_id : Mapped[int] = mapped_column(Integer, ForeignKey("articles.id",ondelete="CASCADE"), nullable=False)
 
     user: Mapped["User"] = relationship(
         "User",
@@ -26,7 +26,7 @@ class Like(CreateTimeBase,Base):
         lazy="selectin"
     )
 
-     # ✅ 生产环境关键：为高频查询创建联合索引
+    # ✅ 生产环境关键：为高频查询创建联合索引
     __table_args__ = (
         # 唯一约束（同时作为索引）
         UniqueConstraint('user_id', 'article_id', name='uq_user_article_like'),

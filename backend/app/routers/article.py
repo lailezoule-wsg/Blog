@@ -1,22 +1,24 @@
-from typing import Annotated
+from typing import Annotated,Optional
 from fastapi import APIRouter,Depends,HTTPException,status,Path
 
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.utils.depends import get_db,get_current_user,decode_token
-
 from app.schemas.common import ResponseModel
 from app.schemas.article import (
     ArticleResponse,ArticleCreate,ArticleQuery,ArticleUpdate,ArticleSingleResponse,
-    ArticlePublishResponse,ArticleLikeResponse
+    ArticlePublishResponse,ArticleLikeResponse,ArticleTagAdd
 )
 from app.schemas.common import ResponseModel,PaginageResponse,PaginateData
-from app.utils.depends import PaginateParams
+from app.schemas.tag import TagResponse
+from app.schemas.comment import CommentCreate,CommentResponse,CommentCreateResponse
 
+from app.utils.depends import PaginateParams
+from app.utils.depends import get_db,get_current_user,get_current_user_optional
 
 from app.models.user import User
 
 from app.services.article import ArticleService
+
 
 router = APIRouter(prefix="/api/articles",tags=["文章"])
 
@@ -113,3 +115,79 @@ async def like_article(
         message=message,
         data=ArticleLikeResponse(like_count=like_count,liked=liked)
     )
+
+@router.post("/{article_id}/tags",response_model=ResponseModel)
+async def add_tags(
+    article_id:Annotated[int,Path(...,gt=0)],
+    data:ArticleTagAdd,
+    current_user:CurrentUser,
+    db:DBSession
+):
+    service = ArticleService(db)
+    tags = await service.add_tags(article_id,data)
+    items = [TagResponse.model_validate(tag) for tag in tags]
+    return ResponseModel(data={"tags":items})
+
+@router.get("/{article_id}/comments",response_model=PaginageResponse[CommentResponse])
+async def list_comments(
+    article_id:Annotated[int,Path(...,gt=0)],
+    paginateParams:Annotated[PaginateParams,Depends()],
+    db:DBSession
+):
+    service = ArticleService(db)
+    total,comments = await service.list_comments(article_id,paginateParams)
+    items = [CommentResponse.model_validate(comment) for comment in comments]
+    paginateData = PaginateData(
+        page=paginateParams.page,
+        size=paginateParams.size,
+        total=total,
+        items=items
+    )
+    return ResponseModel(data=paginateData)
+
+@router.post("/{article_id}/comments",response_model=ResponseModel[CommentCreateResponse])
+async def add_comments(
+    article_id:Annotated[int,Path(...,gt=0)],
+    data:CommentCreate,
+    current_user: Annotated[Optional[User], Depends(get_current_user_optional)],
+    db:DBSession
+):
+    service = ArticleService(db)
+    if current_user is None and data.nickname is None:
+        raise HTTPException(status.HTTP_400_BAD_REQUEST,"用户未登录或者匿名名称为空")
+    comments = await service.add_comments(current_user,article_id,data)
+    return ResponseModel(data=CommentResponse.model_validate(comments))
+
+@router.put("/{article_id}/comments/{comment_id}",response_model=ResponseModel[CommentCreateResponse])
+async def update_comments(
+    article_id:Annotated[int,Path(...,gt=0)],
+    comment_id:Annotated[int,Path(...,gt=0)],
+    data:CommentCreate,
+    current_user: CurrentUser,
+    db:DBSession
+):
+    service = ArticleService(db)
+    comments = await service.update_comments(current_user,article_id,comment_id,data)
+    return ResponseModel(data=CommentResponse.model_validate(comments))
+
+@router.delete("/{article_id}/comments/{comment_id}",response_model=ResponseModel)
+async def delete_comments(
+    article_id:Annotated[int,Path(...,gt=0)],
+    comment_id:Annotated[int,Path(...,gt=0)],
+    current_user: CurrentUser,
+    db:DBSession
+):
+    service = ArticleService(db)
+    await service.delete_comments(current_user,article_id,comment_id)
+    return ResponseModel(data="删除成功")
+
+@router.post("/{article_id}/comments/{comment_id}/approve",response_model=ResponseModel)
+async def approve_comments(
+    article_id:Annotated[int,Path(...,gt=0)],
+    comment_id:Annotated[int,Path(...,gt=0)],
+    current_user: CurrentUser,
+    db:DBSession
+):
+    service = ArticleService(db)
+    approve = await service.approve_comments(current_user,article_id,comment_id)
+    return ResponseModel(data=approve)

@@ -20,6 +20,9 @@ class LocalTags(BaseModel):
     name:str
     model_config = ConfigDict(from_attributes=True)
 
+class ArticleTagAdd(BaseModel):
+    tag_ids:set[int] = Field(default_factory=set)
+
 class ArticleCreate(BaseModel):
     title: str = Field(..., max_length=200, description="文章标题")
     content: str = Field(..., description="文章内容（Markdown 格式）")
@@ -77,7 +80,7 @@ class ArticleSingleResponse(BaseModel):
 class ArticleQuery(BaseModel):
     sort_by:ArticleQuerySortBy = ArticleQuerySortBy.CREATED
     order:CommonOrderBy = CommonOrderBy.DESC
-    status:ArticleStatus = ArticleStatus.DRAFT
+    status:ArticleStatus | None = None
     category_id:int | None = None
     tag_id:int | None = None
     author_id:int | None = None

@@ -1,15 +1,17 @@
-from typing import Annotated
+from typing import Annotated,Optional
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from fastapi import Depends,HTTPException,Query,status
-from fastapi.security import OAuth2PasswordBearer
+from fastapi.security import OAuth2PasswordBearer,HTTPBearer, HTTPAuthorizationCredentials
 
 from app.database import async_session
 from app.utils.common import decode_token
-from app.config import settings
 
 from app.models.user import User
+
+# 使用 HTTPBearer 并关闭自动错误报告
+security = HTTPBearer(auto_error=False)
 
 # OAuth2PasswordBearer是FastAPI提供的一个类，
 # 用于处理基于OAuth2的密码模式认证。它会从请求中提取Authorization头部的Bearer token，
@@ -33,7 +35,6 @@ async def get_current_user(
   token:Annotated[str,Depends(oauth2_scheme)],
   db:Annotated[AsyncSession,Depends(get_db)]      
 ):
-    print("token:",token)
     exception_alert = HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED,
         detail="Token 已过期或无效",
@@ -55,6 +56,31 @@ async def get_current_user(
     if user is None:
         raise exception_alert
     return user
+
+async def get_current_user_optional(
+    credentials: Optional[HTTPAuthorizationCredentials] = Depends(security),
+    db: AsyncSession = Depends(get_db)
+) -> Optional[User]:
+    """
+    获取当前用户（可选认证）
+    - 有有效 token：返回用户对象
+    - 无 token 或 token 无效：返回 None
+    """
+    if not credentials:
+        return None
+    
+    token = credentials.credentials
+    try:
+        payload = decode_token(token)  # 你的 JWT 解码函数
+        user_id = payload.get("sub")
+        if user_id:
+            user = await db.get(User, int(user_id))
+            return user
+    except Exception:
+        # token 无效或过期，返回 None（不抛出异常）
+        return None
+    
+    return None
 
 # 获取admin信息
 async def get_current_admin(

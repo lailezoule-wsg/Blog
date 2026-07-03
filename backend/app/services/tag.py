@@ -17,7 +17,7 @@ class TagService:
         results = await self.db.get(Tag,id)
         return results
     
-    async def get_by_ids(self,ids:list[int]):
+    async def get_by_ids(self,ids:set[int]):
         results = await self.db.execute(
             select(Tag).where(Tag.id.in_(ids))
         )

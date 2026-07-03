@@ -30,8 +30,8 @@ class Article(DateTimeBase,Base):
         nullable=False
     )
     is_private : Mapped[bool] = mapped_column(Boolean, default=False)
-    author_id : Mapped[int] = mapped_column(ForeignKey("users.id"), nullable=False)
-    category_id : Mapped[int] = mapped_column(ForeignKey("categories.id"), nullable=False)
+    author_id : Mapped[int] = mapped_column(ForeignKey("users.id",ondelete="CASCADE"), nullable=False)
+    category_id : Mapped[int] = mapped_column(ForeignKey("categories.id",ondelete="CASCADE"), nullable=False)
 
     published_at : Mapped[datetime] = mapped_column(
         DateTime(timezone=True),
