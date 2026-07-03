@@ -1,7 +1,7 @@
 from typing import TYPE_CHECKING
 from datetime import datetime
-from sqlalchemy import DateTime, Integer, String, ForeignKey, Boolean, func,Text,Enum
-from sqlalchemy.orm import DeclarativeBase,Mapped, mapped_column,relationship
+from sqlalchemy import DateTime, Integer, String, ForeignKey, Boolean, func,Text,Enum,CheckConstraint
+from sqlalchemy.orm import Mapped, mapped_column,relationship
 
 from app.models.user import DateTimeBase,Base
 from app.utils.enum import ArticleStatus
@@ -11,6 +11,7 @@ if TYPE_CHECKING:
     from app.models.like import Like
     from app.models.category import Category
     from app.models.user import User
+
 
 class Article(DateTimeBase,Base):
     __tablename__ = "articles"
@@ -61,4 +62,10 @@ class Article(DateTimeBase,Base):
         "User",
         back_populates = "articles",
         lazy = "selectin"
+    )
+
+    # ✅ 表级约束：确保点赞数不为负
+    __table_args__ = (
+        CheckConstraint('like_count >= 0', name='ck_like_count_positive'),
+        CheckConstraint('view_count >= 0', name='ck_view_count_positive'),
     )

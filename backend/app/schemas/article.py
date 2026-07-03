@@ -28,7 +28,6 @@ class ArticleCreate(BaseModel):
     category_id: int = Field(..., description="分类ID")
     tag_ids: list[int] = Field(default_factory=list, description="标签列表")
     is_private: bool = Field(default=False, description="是否私密")
-    author_id: int = Field(default=0, description="作者id")
     status:ArticleStatus = ArticleStatus.DRAFT
 
 class ArticleResponse(BaseModel):
@@ -56,6 +55,24 @@ class ArticleResponse(BaseModel):
     
     model_config = ConfigDict(from_attributes=True)
 
+class ArticleSingleResponse(BaseModel):
+    id: int
+    title: str
+    content: str
+    summary: str | None = None
+    cover_image: str | None = None
+    category_id: int = 0
+    status:ArticleStatus = ArticleStatus.DRAFT
+    author_id: int
+    is_private: bool = False
+    view_count: int = 0
+    like_count: int = 0
+    published_at: datetime | None = None
+    created_at: datetime
+    updated_at: datetime
+
+    model_config = ConfigDict(from_attributes=True)
+
 
 class ArticleQuery(BaseModel):
     sort_by:ArticleQuerySortBy = ArticleQuerySortBy.CREATED
@@ -65,3 +82,25 @@ class ArticleQuery(BaseModel):
     tag_id:int | None = None
     author_id:int | None = None
     q:str | None = None
+
+class ArticleUpdate(BaseModel):
+    title: str | None = None
+    content: str | None = None
+    summary: str | None = None
+    cover_image: str | None = None
+    category_id: int | None = None
+    is_private: bool | None = None
+
+class ArticlePublishResponse(BaseModel):
+    id: int
+    title: str
+    status:ArticleStatus = ArticleStatus.PUBLISHED
+    published_at: datetime
+
+    model_config = ConfigDict(from_attributes=True)
+
+class ArticleLikeResponse(BaseModel):
+    liked:bool = False
+    like_count: int
+    
+    model_config = ConfigDict(from_attributes=True)
