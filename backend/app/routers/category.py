@@ -1,24 +1,26 @@
 from typing import Annotated
-from fastapi import APIRouter,Query
-from fastapi import APIRouter,Depends,HTTPException,status,Form,File,UploadFile
+from fastapi import APIRouter,Depends,HTTPException,status,Form,File,UploadFile,Query,Path
 
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.utils.depends import get_db,get_current_user,decode_token
+from app.utils.depends import get_db,get_current_user,decode_token,get_current_admin
 
 from app.schemas.common import ResponseModel,PaginageResponse,PaginateData
+from app.utils.depends import PaginateParams
+
 from app.schemas.category import CategoryCreate,CategoryResponse
 
 from app.models.user import User
 
 from app.services.category import CategoryService
 
-from app.utils.depends import PaginateParams
+
 
 router = APIRouter(prefix="/api/categories",tags=["分类"])
 
 DBSession = Annotated[AsyncSession,Depends(get_db)]
 CurrentUser = Annotated[User,Depends(get_current_user)]
+CurrentAdmin = Annotated[User,Depends(get_current_admin)]
 
 @router.get("/",response_model=PaginageResponse[CategoryResponse])
 async def list_categories(
@@ -48,3 +50,24 @@ async def create(
     service = CategoryService(db)
     category = await service.create(data)
     return ResponseModel(data=CategoryResponse.model_validate(category))
+
+@router.put("/{category_id}",response_model=ResponseModel[CategoryResponse])
+async def update_category(
+    category_id:Annotated[int,Path(...,gt=0,title="分类ID")],
+    data:CategoryCreate,
+    current_user:CurrentAdmin,
+    db:DBSession
+):
+    service = CategoryService(db)
+    category = await service.update_category(category_id,data)
+    return ResponseModel(data=CategoryResponse.model_validate(category))
+
+@router.delete("/{category_id}",response_model=ResponseModel)
+async def delete_category(
+    category_id:Annotated[int,Path(...,gt=0,title="分类ID")],
+    current_user:CurrentAdmin,
+    db:DBSession
+):
+    service = CategoryService(db)
+    await service.delete_category(category_id)
+    return ResponseModel(data="删除成功")

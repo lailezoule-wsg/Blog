@@ -1,13 +1,16 @@
 from typing import TYPE_CHECKING
 from datetime import datetime
-from sqlalchemy import DateTime, Integer, String, ForeignKey, Boolean, func,Text
+from sqlalchemy import DateTime, Integer, String, ForeignKey, Boolean, func,Text,Enum
 from sqlalchemy.orm import DeclarativeBase,Mapped, mapped_column,relationship
 
 from app.models.user import DateTimeBase,Base
+from app.utils.enum import ArticleStatus
 
 if TYPE_CHECKING:
-    from backend.app.models.tag import Tag
-    from backend.app.models.like import Like
+    from app.models.tag import Tag
+    from app.models.like import Like
+    from app.models.category import Category
+    from app.models.user import User
 
 class Article(DateTimeBase,Base):
     __tablename__ = "articles"
@@ -19,7 +22,12 @@ class Article(DateTimeBase,Base):
     cover_image : Mapped[str] = mapped_column(String(255), nullable=True)
     view_count : Mapped[int] = mapped_column(Integer, default=0)
     like_count : Mapped[int] = mapped_column(Integer, default=0)
-    status : Mapped[str] = mapped_column(String(20), nullable=False)
+    status : Mapped[ArticleStatus] = mapped_column(
+        Enum(ArticleStatus), 
+        default=ArticleStatus.DRAFT,
+        server_default=ArticleStatus.DRAFT.value,
+        nullable=False
+    )
     is_private : Mapped[bool] = mapped_column(Boolean, default=False)
     author_id : Mapped[int] = mapped_column(ForeignKey("users.id"), nullable=False)
     category_id : Mapped[int] = mapped_column(ForeignKey("categories.id"), nullable=False)
@@ -40,5 +48,17 @@ class Article(DateTimeBase,Base):
     likes: Mapped[list["Like"]] = relationship(
         "Like",
         back_populates = "article",
+        lazy = "selectin"
+    )
+
+    category: Mapped["Category"] = relationship(
+        "Category",
+        back_populates = "articles",
+        lazy = "selectin"
+    )
+
+    author: Mapped["User"] = relationship(
+        "User",
+        back_populates = "articles",
         lazy = "selectin"
     )

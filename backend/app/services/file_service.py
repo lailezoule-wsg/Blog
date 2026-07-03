@@ -4,12 +4,13 @@ import shutil
 from pathlib import Path
 from fastapi import UploadFile
 from app.utils.file_exceptions import *
+from app.config import settings
 
 class FileUploadService:
     """文件上传服务"""
     
     def __init__(self):
-        self.upload_dir = Path("uploads")
+        self.upload_dir = Path(settings.upload_dir)
         self.upload_dir.mkdir(parents=True, exist_ok=True)
     
     async def validate_file(
@@ -81,7 +82,7 @@ class FileUploadService:
                 "path": str(file_path),
                 "size": file_path.stat().st_size,
                 "content_type": file.content_type,
-                "url": f"/uploads/{subdir}/{filename}" if subdir else f"/uploads/{filename}"
+                "url": f"/{settings.upload_dir}/{subdir}/{filename}" if subdir else f"/uploads/{filename}"
             }
             
         except HTTPException:

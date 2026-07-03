@@ -1,20 +1,26 @@
 from datetime import date,datetime
 from typing import Annotated,Optional
 from pydantic import BaseModel,Field,ConfigDict
+from fastapi import Depends
+from app.utils.enum import ArticleStatus,ArticleQuerySortBy,CommonOrderBy
+
 
 class LocalAuthor(BaseModel):
     id:int
     username:str
+    model_config = ConfigDict(from_attributes=True)
 
 class LocalCategory(BaseModel):
     id:int
     name:str
+    model_config = ConfigDict(from_attributes=True)
 
 class LocalTags(BaseModel):
     id:int
     name:str
+    model_config = ConfigDict(from_attributes=True)
 
-class ArticleRequest(BaseModel):
+class ArticleCreate(BaseModel):
     title: str = Field(..., max_length=200, description="文章标题")
     content: str = Field(..., description="文章内容（Markdown 格式）")
     summary: Optional[str] = Field(None, max_length=500, description="文章摘要")
@@ -23,6 +29,7 @@ class ArticleRequest(BaseModel):
     tag_ids: list[int] = Field(default_factory=list, description="标签列表")
     is_private: bool = Field(default=False, description="是否私密")
     author_id: int = Field(default=0, description="作者id")
+    status:ArticleStatus = ArticleStatus.DRAFT
 
 class ArticleResponse(BaseModel):
     id: int = Field(..., description="文章ID")
@@ -31,6 +38,7 @@ class ArticleResponse(BaseModel):
     summary: Optional[str] = Field(None, max_length=500, description="文章摘要")
     cover_image: Optional[str] = Field(None, description="封面图路径")
     category_id: int = Field(..., description="分类ID")
+    status:ArticleStatus = ArticleStatus.DRAFT
     author_id: int = Field(..., description="作者ID")
     is_private: bool = Field(default=False, description="是否私密")
     view_count: int = Field(default=0, description="浏览次数")
@@ -42,8 +50,18 @@ class ArticleResponse(BaseModel):
     # 作者
     author:Optional[LocalAuthor] = Field(default=None, description="作者时间")
     # 分类
-    category: Optional[LocalCategory] = Field(default=None, description="分类详情")
+    category: Optional[LocalCategory] = Field(default=None,description="分类详情")
     # 标签
     tags: list[LocalTags] = Field(default_factory=list, description="标签列表")
     
     model_config = ConfigDict(from_attributes=True)
+
+
+class ArticleQuery(BaseModel):
+    sort_by:ArticleQuerySortBy = ArticleQuerySortBy.CREATED
+    order:CommonOrderBy = CommonOrderBy.DESC
+    status:ArticleStatus = ArticleStatus.DRAFT
+    category_id:int | None = None
+    tag_id:int | None = None
+    author_id:int | None = None
+    q:str | None = None

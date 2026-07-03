@@ -4,8 +4,9 @@ from sqlalchemy import DateTime, Integer, String, ForeignKey, Boolean, func,Text
 from sqlalchemy.orm import DeclarativeBase,Mapped, mapped_column,relationship
 
 if TYPE_CHECKING:
-    from backend.app.models.comment import Comment
-    from backend.app.models.like import Like
+    from app.models.comment import Comment
+    from app.models.like import Like
+    from app.models.article import Article
 
 class Base(DeclarativeBase):
     pass
@@ -52,5 +53,13 @@ class User(DateTimeBase,Base):
         back_populates="user",
         lazy="selectin",
     )
+
+    articles : Mapped[list["Article"]] = relationship(
+        "Article",
+        back_populates="author",
+        lazy="selectin",
+    )
+
+
 
     
