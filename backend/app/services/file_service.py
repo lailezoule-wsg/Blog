@@ -1,5 +1,6 @@
 # services/file_service.py
 import os
+import uuid
 import shutil
 from pathlib import Path
 from fastapi import UploadFile
@@ -16,6 +17,28 @@ class FileUploadService:
         self.upload_dir = Path(settings.upload_dir)
         self.upload_dir.mkdir(parents=True, exist_ok=True)
     
+    # 图片
+    async def img_save(self,file:UploadFile,old_pic:str|None=None,del_flag:bool=False,subdir:str=settings.avatar_name) -> dict:
+        await self.validate_file(
+            file,
+            max_size=settings.avatar_max_file_size,
+            allowed_extensions=settings.avatar_allowed_extensions
+        )
+        
+        # ✅ 保存文件（如果失败会自动抛出异常）
+        filename = file.filename or "unknown"
+        ext = os.path.splitext(filename)[1].lower()
+        filename = f"{uuid.uuid4().hex}{ext}"
+        file_info = await self.save_file(
+            file,
+            subdir=subdir,
+            filename=filename  # 自动生成文件名
+        )
+         # 先删除原有头像
+        if old_pic and del_flag:
+            await self.delete_file(subdir,old_pic)
+        return file_info
+
     async def validate_file(
         self,
         file: UploadFile,
@@ -48,7 +71,7 @@ class FileUploadService:
         if allowed_mime_types and file.content_type:
             if file.content_type not in allowed_mime_types:
                 raise UnsupportedFileTypeError(list(allowed_mime_types))
-    
+
     async def save_file(
         self,
         file: UploadFile,

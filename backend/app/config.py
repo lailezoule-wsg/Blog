@@ -36,11 +36,16 @@ class Settings(BaseSettings):
     avatar_name:str = "avatar"
     avatar_dir: str = "uploads/avatar"
 
+    # 文章
+    article_pic_dir:str = "uploads/article_pic"
+    article_pic_name:str = "article_pic"
+
     def ensure_all_dirs(self):
         """确保所有目录存在"""
         dirs = [
             self.upload_dir,
             self.avatar_dir,
+            self.article_pic_dir
         ]
         for dir_path in dirs:
             Path(dir_path).mkdir(parents=True, exist_ok=True)
@@ -48,7 +53,8 @@ class Settings(BaseSettings):
     def get_mount_configs(self):
         """获取挂载配置"""
         return [
-            ("/uploads/avatar", self.avatar_dir, "avatar")
+            ("/uploads/avatar", self.avatar_dir, "avatar"),
+            ("/uploads/article_pic", self.article_pic_dir, "article_pic")
         ]
 
     model_config = {

@@ -1,5 +1,5 @@
 from typing import Annotated,Optional
-from fastapi import APIRouter,Depends,HTTPException,status,Path
+from fastapi import APIRouter,Depends,HTTPException,status,Path,File,UploadFile,Form
 
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -19,6 +19,7 @@ from app.models.user import User
 
 from app.services.article import ArticleService
 from app.services.ws import WSService
+from app.services.file_service import FileUploadService
 
 
 router = APIRouter(prefix="/api/articles",tags=["文章"])
@@ -63,23 +64,28 @@ async def detail(
 
 @router.post("/",response_model=ResponseModel[ArticleResponse])
 async def create(
-    data:ArticleCreate,
     current_user:CurrentUser,
-    db:DBSession
+    db:DBSession,
+    data:ArticleCreate = Depends(ArticleCreate.as_form),
+    file:UploadFile = File(...),
+    fileService: FileUploadService = Depends(FileUploadService),
 ):
     service = ArticleService(db)
-    article = await service.create(current_user,data)
+    article = await service.create(current_user,data,file,fileService)
+
     return ResponseModel(data=ArticleResponse.model_validate(article))
 
 @router.put("/{article_id}",response_model=ResponseModel[ArticleSingleResponse])
 async def update_article(
     article_id:Annotated[int,Path(...,gt=0)],
-    data:ArticleUpdate,
     current_user:CurrentUser,
-    db:DBSession
+    db:DBSession,
+    data:ArticleCreate = Depends(ArticleCreate.as_form),
+    file:UploadFile = File(...),
+    fileService: FileUploadService = Depends(FileUploadService),
 ):
     service = ArticleService(db)
-    article = await service.update_article(current_user,article_id,data)
+    article = await service.update_article(current_user,article_id,data,file,fileService)
     return ResponseModel(data=ArticleSingleResponse.model_validate(article))
 
 @router.delete("/{article_id}",response_model=ResponseModel)

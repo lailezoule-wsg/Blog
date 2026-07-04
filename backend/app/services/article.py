@@ -1,4 +1,4 @@
-from fastapi import HTTPException,status,Depends
+from fastapi import HTTPException,status,UploadFile
 from sqlalchemy import select,update,delete,or_,func
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload,joinedload
@@ -18,6 +18,9 @@ from app.models.comment import Comment
 
 from app.services.tag import TagService
 from app.services.category import CategoryService
+from app.services.file_service import FileUploadService
+
+from app.config import settings
 
 from app.utils.logging import get_logger
 
@@ -117,7 +120,7 @@ class ArticleService:
         result = results.scalars().all()
         return total,result
 
-    async def create(self,user:User,data:ArticleCreate):
+    async def create(self,user:User,data:ArticleCreate,file:UploadFile,fileService:FileUploadService):
         category = await self.categoryService.get_by_id(data.category_id)
         if not category:
             raise ValueError(f"分类 ID {data.category_id} 不存在")
@@ -128,6 +131,15 @@ class ArticleService:
             tags = await self.tagService.get_by_ids(set(data.tag_ids))
             if len(tags) != len(data.tag_ids):
                 raise ValueError("部分标签不存在")
+        cover_image = ""
+        try:
+            file_info = await fileService.img_save(
+                file=file,
+                subdir=settings.article_pic_name
+            )
+            cover_image = file_info["url"]
+        except HTTPException as e:
+            logger.error(f"文章封面上传失败：{str(e)}")
 
         article = Article(
             title=data.title,
@@ -138,6 +150,8 @@ class ArticleService:
             author_id=user.id,
             status=data.status,  # 确保有默认值
         )
+        if cover_image:
+            article.cover_image = cover_image
         # 4. 关联标签
         if tags:
             article.tags = list(tags)  # ✅ 直接赋值关联对象列表
@@ -190,13 +204,26 @@ class ArticleService:
             # 浏览量更新失败不应影响主流程，记录日志即可
             logger.warning(f"Failed to increment view count for article {article_id}: {e}")
         
-    async def update_article(self,user:User,article_id:int,data:ArticleUpdate):
+    async def update_article(self,user:User,article_id:int,data:ArticleUpdate,file:UploadFile,fileService:FileUploadService):
         article = await self.get_by_id(article_id)
         if article.author_id != user.id:
             raise HTTPException(
                 status.HTTP_403_FORBIDDEN,
                 "无权更新他人文章"
             )
+
+        cover_image = ""
+        old_pic = (article.cover_image).split("/")[-1] if article.cover_image else None
+        try:
+            file_info = await fileService.img_save(
+                file=file,
+                old_pic=old_pic,
+                del_flag=True,
+                subdir=settings.article_pic_name
+            )
+            cover_image = file_info["url"]
+        except HTTPException as e:
+            logger.error(f"文章封面上传失败：{str(e)}")
 
         if data.title:
             article.title = data.title
@@ -208,6 +235,8 @@ class ArticleService:
             article.category_id = data.category_id
         if data.is_private:
             article.is_private = data.is_private
+        if cover_image:
+            article.cover_image = cover_image
 
         article.author_id = user.id
 

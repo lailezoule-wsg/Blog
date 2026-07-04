@@ -18,7 +18,7 @@
         </div>
       </div>
 
-      <el-image v-if="article.cover_image" :src="article.cover_image" class="cover-image" fit="cover" />
+      <el-image v-if="article.cover_image" :src="`${API_BASE}${article.cover_image}`" class="cover-image" fit="cover" />
 
       <div class="article-body" v-html="renderMarkdown(article.content)"></div>
 
@@ -113,6 +113,7 @@ import { ElMessage, ElMessageBox } from 'element-plus'
 import { View, Star } from '@element-plus/icons-vue'
 import { useUserStore } from '../../stores/user'
 import { articleApi } from '../../api/article'
+import { API_BASE } from '../../api'
 import { commentApi } from '../../api/comment'
 import type { Article, Comment } from '../../types'
 

@@ -3,8 +3,10 @@ import { ElMessage } from 'element-plus'
 import { useUserStore } from '../stores/user'
 import router from '../router'
 
+export const API_BASE = 'http://localhost:8000'
+
 const api = axios.create({
-  baseURL: 'http://localhost:8000',
+  baseURL: API_BASE,
   timeout: 10000,
 })
 

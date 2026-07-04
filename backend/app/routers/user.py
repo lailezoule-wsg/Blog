@@ -100,30 +100,13 @@ async def avatar(
     current_user:CurrentUser,
     db:DBSession,
     file:UploadFile = File(...),
-    service: FileUploadService = Depends(FileUploadService)
+    fileService: FileUploadService = Depends(FileUploadService)
 ):
 
     try:
-        old_avatar = (current_user.avatar_url).split("/")[-1]
+        old_avatar = (current_user.avatar_url).split("/")[-1] if current_user.avatar_url else None
         # ✅ 验证文件
-        await service.validate_file(
-            file,
-            max_size=settings.avatar_max_file_size,
-            allowed_extensions=settings.avatar_allowed_extensions
-        )
-        
-        # ✅ 保存文件（如果失败会自动抛出异常）
-        filename = file.filename or "unknown"
-        ext = os.path.splitext(filename)[1].lower()
-        filename = f"{uuid.uuid4().hex}{ext}"
-        file_info = await service.save_file(
-            file,
-            subdir=settings.avatar_name,
-            filename=filename  # 自动生成文件名
-        )
-
-        # 先删除原有头像
-        await service.delete_file(settings.avatar_name,old_avatar)
+        file_info = await fileService.img_save(file,old_avatar,del_flag=True)
         
         # 更新头像
         current_user.avatar_url = file_info["url"]

@@ -29,7 +29,7 @@
           </div>
           <el-image
             v-if="article.cover_image"
-            :src="article.cover_image"
+            :src="`${API_BASE}${article.cover_image}`"
             class="article-cover"
             fit="cover"
           />
@@ -74,6 +74,7 @@ import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { View, Star } from '@element-plus/icons-vue'
 import { articleApi } from '../api/article'
+import { API_BASE } from '../api'
 import { subscriptionApi } from '../api/subscription'
 import { ElMessage } from 'element-plus'
 import type { ArticleListItem } from '../types'

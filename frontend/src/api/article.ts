@@ -2,8 +2,10 @@ import api from './index'
 import type { Article, ArticleListItem, ResponseModel, PaginatedData } from '../types'
 
 export const articleApi = {
-  create(data: Partial<Article>) {
-    return api.post<ResponseModel<Article>>('/api/articles', data)
+  create(formData: FormData) {
+    return api.post<ResponseModel<Article>>('/api/articles', formData, {
+      headers: { 'Content-Type': 'multipart/form-data' },
+    })
   },
 
   getList(params: {
@@ -24,8 +26,10 @@ export const articleApi = {
     return api.get<ResponseModel<Article>>(`/api/articles/${id}`)
   },
 
-  update(id: number, data: Partial<Article>) {
-    return api.put<ResponseModel<Article>>(`/api/articles/${id}`, data)
+  update(id: number, formData: FormData) {
+    return api.put<ResponseModel<Article>>(`/api/articles/${id}`, formData, {
+      headers: { 'Content-Type': 'multipart/form-data' },
+    })
   },
 
   delete(id: number) {

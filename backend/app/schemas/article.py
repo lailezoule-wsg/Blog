@@ -1,7 +1,8 @@
+import json
 from datetime import date,datetime
 from typing import Annotated,Optional
 from pydantic import BaseModel,Field,ConfigDict
-from fastapi import Depends
+from fastapi import Depends,Form
 from app.utils.enum import ArticleStatus,ArticleQuerySortBy,CommonOrderBy
 
 
@@ -32,6 +33,67 @@ class ArticleCreate(BaseModel):
     tag_ids: list[int] = Field(default_factory=list, description="标签列表")
     is_private: bool = Field(default=False, description="是否私密")
     status:ArticleStatus = ArticleStatus.DRAFT
+
+    @classmethod
+    def as_form(
+        cls,
+        title: str = Form(..., description="文章标题"),
+        content: str = Form(..., description="文章内容"),
+        summary: Optional[str] = Form(None, description="文章摘要"),
+        cover_image: Optional[str] = Form(None, description="封面图路径"),
+        category_id: int = Form(..., description="分类ID"),
+        tag_ids: str = Form("[]", description="标签ID列表 (JSON数组)"),
+        is_private: bool = Form(False, description="是否私密"),
+        status: str = Form(ArticleStatus.DRAFT.value, description="文章状态"),
+    ) -> "ArticleCreate":
+        """
+        从 Form 表单数据创建 ArticleCreate 实例
+        
+        用于支持文件上传的 multipart/form-data 请求
+        """
+        # 1. 解析 tag_ids
+        tag_ids_list = cls._parse_tag_ids(tag_ids)
+        
+        # 2. 解析 status
+        try:
+            status_enum = ArticleStatus(status)
+        except ValueError:
+            status_enum = ArticleStatus.DRAFT
+        
+        # 3. 创建实例
+        return cls(
+            title=title,
+            content=content,
+            summary=summary,
+            cover_image=cover_image,
+            category_id=category_id,
+            tag_ids=tag_ids_list,
+            is_private=is_private,
+            status=status_enum,
+        )
+
+    @staticmethod
+    def _parse_tag_ids(tag_ids: str) -> list[int]:
+        """
+        解析 tag_ids JSON 字符串
+        
+        Args:
+            tag_ids: JSON 数组字符串，如 "[1,2,3]" 或 "[]"
+        
+        Returns:
+            List[int]: 标签ID列表
+        """
+        if not tag_ids or tag_ids.strip() == "":
+            return []
+        
+        try:
+            parsed = json.loads(tag_ids)
+            if not isinstance(parsed, list):
+                return []
+            # 确保所有元素都是整数
+            return [int(item) for item in parsed if item is not None]
+        except (json.JSONDecodeError, ValueError, TypeError):
+            return []
 
 class ArticleResponse(BaseModel):
     id: int = Field(..., description="文章ID")

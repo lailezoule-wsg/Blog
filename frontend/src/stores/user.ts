@@ -2,8 +2,7 @@ import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
 import type { User } from '../types'
 import { userApi } from '../api/user'
-
-const API_BASE = 'http://localhost:8000'
+import { API_BASE } from '../api'
 
 export const useUserStore = defineStore('user', () => {
   const user = ref<User | null>(null)
