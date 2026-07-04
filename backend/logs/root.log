@@ -1,0 +1,1024 @@
+2026-07-04 15:38:40,578 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-07-04 15:38:40,579 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-07-04 15:38:40,579 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:38:40,580 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("categories")
+2026-07-04 15:38:40,581 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:38:40,582 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("article_tags")
+2026-07-04 15:38:40,582 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:38:40,583 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("tags")
+2026-07-04 15:38:40,583 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:38:40,586 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("articles")
+2026-07-04 15:38:40,586 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:38:40,587 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("comments")
+2026-07-04 15:38:40,587 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:38:40,588 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("subscriptions")
+2026-07-04 15:38:40,588 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:38:40,588 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("likes")
+2026-07-04 15:38:40,589 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:38:40,590 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-07-04 15:39:16,511 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-07-04 15:39:16,511 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-07-04 15:39:16,511 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:39:16,513 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("categories")
+2026-07-04 15:39:16,513 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:39:16,514 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("article_tags")
+2026-07-04 15:39:16,514 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:39:16,515 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("tags")
+2026-07-04 15:39:16,515 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:39:16,516 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("articles")
+2026-07-04 15:39:16,516 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:39:16,517 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("comments")
+2026-07-04 15:39:16,517 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:39:16,517 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("subscriptions")
+2026-07-04 15:39:16,518 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:39:16,518 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("likes")
+2026-07-04 15:39:16,519 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:39:16,520 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-07-04 15:39:46,239 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-07-04 15:39:46,239 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-07-04 15:39:46,239 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:39:46,241 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("categories")
+2026-07-04 15:39:46,241 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:39:46,242 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("article_tags")
+2026-07-04 15:39:46,242 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:39:46,242 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("tags")
+2026-07-04 15:39:46,243 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:39:46,244 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("articles")
+2026-07-04 15:39:46,244 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:39:46,245 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("comments")
+2026-07-04 15:39:46,245 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:39:46,246 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("subscriptions")
+2026-07-04 15:39:46,246 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:39:46,247 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("likes")
+2026-07-04 15:39:46,247 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:39:46,248 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-07-04 15:40:18,929 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-07-04 15:40:18,929 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-07-04 15:40:18,929 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:40:18,931 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("categories")
+2026-07-04 15:40:18,931 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:40:18,932 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("article_tags")
+2026-07-04 15:40:18,932 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:40:18,933 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("tags")
+2026-07-04 15:40:18,933 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:40:18,934 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("articles")
+2026-07-04 15:40:18,934 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:40:18,935 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("comments")
+2026-07-04 15:40:18,935 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:40:18,936 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("subscriptions")
+2026-07-04 15:40:18,936 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:40:18,937 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("likes")
+2026-07-04 15:40:18,937 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:40:18,938 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-07-04 15:41:14,937 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-07-04 15:41:14,937 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-07-04 15:41:14,937 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:41:14,939 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("categories")
+2026-07-04 15:41:14,939 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:41:14,940 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("article_tags")
+2026-07-04 15:41:14,940 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:41:14,941 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("tags")
+2026-07-04 15:41:14,941 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:41:14,942 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("articles")
+2026-07-04 15:41:14,942 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:41:14,943 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("comments")
+2026-07-04 15:41:14,943 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:41:14,944 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("subscriptions")
+2026-07-04 15:41:14,944 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:41:14,945 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("likes")
+2026-07-04 15:41:14,945 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:41:14,946 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-07-04 15:41:36,082 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-07-04 15:41:36,082 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-07-04 15:41:36,083 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:41:36,084 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("categories")
+2026-07-04 15:41:36,084 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:41:36,085 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("article_tags")
+2026-07-04 15:41:36,085 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:41:36,086 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("tags")
+2026-07-04 15:41:36,086 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:41:36,087 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("articles")
+2026-07-04 15:41:36,087 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:41:36,088 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("comments")
+2026-07-04 15:41:36,088 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:41:36,089 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("subscriptions")
+2026-07-04 15:41:36,090 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:41:36,090 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("likes")
+2026-07-04 15:41:36,090 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:41:36,091 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-07-04 15:41:58,875 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-07-04 15:41:58,875 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-07-04 15:41:58,875 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:41:58,877 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("categories")
+2026-07-04 15:41:58,877 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:41:58,878 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("article_tags")
+2026-07-04 15:41:58,878 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:41:58,879 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("tags")
+2026-07-04 15:41:58,879 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:41:58,880 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("articles")
+2026-07-04 15:41:58,880 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:41:58,881 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("comments")
+2026-07-04 15:41:58,881 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:41:58,882 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("subscriptions")
+2026-07-04 15:41:58,882 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:41:58,883 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("likes")
+2026-07-04 15:41:58,883 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:41:58,884 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-07-04 15:42:11,682 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-07-04 15:42:11,683 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-07-04 15:42:11,683 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:42:11,684 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("categories")
+2026-07-04 15:42:11,684 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:42:11,685 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("article_tags")
+2026-07-04 15:42:11,685 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:42:11,686 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("tags")
+2026-07-04 15:42:11,687 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:42:11,687 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("articles")
+2026-07-04 15:42:11,688 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:42:11,688 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("comments")
+2026-07-04 15:42:11,688 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:42:11,689 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("subscriptions")
+2026-07-04 15:42:11,689 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:42:11,690 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("likes")
+2026-07-04 15:42:11,690 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:42:11,691 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-07-04 15:42:12,929 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-07-04 15:42:12,929 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-07-04 15:42:12,929 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:42:12,931 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("categories")
+2026-07-04 15:42:12,931 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:42:12,932 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("article_tags")
+2026-07-04 15:42:12,932 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:42:12,933 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("tags")
+2026-07-04 15:42:12,933 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:42:12,934 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("articles")
+2026-07-04 15:42:12,934 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:42:12,935 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("comments")
+2026-07-04 15:42:12,935 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:42:12,936 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("subscriptions")
+2026-07-04 15:42:12,936 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:42:12,937 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("likes")
+2026-07-04 15:42:12,937 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:42:12,938 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-07-04 15:42:15,890 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-07-04 15:42:15,890 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-07-04 15:42:15,890 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:42:15,892 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("categories")
+2026-07-04 15:42:15,892 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:42:15,893 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("article_tags")
+2026-07-04 15:42:15,893 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:42:15,894 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("tags")
+2026-07-04 15:42:15,894 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:42:15,894 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("articles")
+2026-07-04 15:42:15,895 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:42:15,896 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("comments")
+2026-07-04 15:42:15,896 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:42:15,897 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("subscriptions")
+2026-07-04 15:42:15,897 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:42:15,897 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("likes")
+2026-07-04 15:42:15,898 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:42:15,899 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-07-04 15:42:17,126 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-07-04 15:42:17,126 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-07-04 15:42:17,127 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:42:17,128 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("categories")
+2026-07-04 15:42:17,128 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:42:17,129 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("article_tags")
+2026-07-04 15:42:17,129 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:42:17,130 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("tags")
+2026-07-04 15:42:17,130 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:42:17,131 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("articles")
+2026-07-04 15:42:17,131 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:42:17,132 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("comments")
+2026-07-04 15:42:17,132 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:42:17,133 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("subscriptions")
+2026-07-04 15:42:17,133 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:42:17,134 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("likes")
+2026-07-04 15:42:17,134 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:42:17,135 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-07-04 15:42:18,416 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-07-04 15:42:18,416 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-07-04 15:42:18,417 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:42:18,418 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("categories")
+2026-07-04 15:42:18,418 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:42:18,419 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("article_tags")
+2026-07-04 15:42:18,419 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:42:18,420 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("tags")
+2026-07-04 15:42:18,420 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:42:18,421 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("articles")
+2026-07-04 15:42:18,421 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:42:18,422 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("comments")
+2026-07-04 15:42:18,422 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:42:18,423 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("subscriptions")
+2026-07-04 15:42:18,423 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:42:18,424 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("likes")
+2026-07-04 15:42:18,424 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:42:18,425 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-07-04 15:42:23,553 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-07-04 15:42:23,577 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.username, users.email, users.hashed_password, users.avatar_url, users.role, users.bio, users.is_active, users.created_at, users.updated_at 
+FROM users 
+WHERE users.username = ?
+2026-07-04 15:42:23,577 - sqlalchemy.engine.Engine - INFO - [generated in 0.00055s] ('wsg',)
+2026-07-04 15:42:23,584 - sqlalchemy.engine.Engine - INFO - SELECT comments.user_id AS comments_user_id, comments.id AS comments_id, comments.content AS comments_content, comments.article_id AS comments_article_id, comments.parent_id AS comments_parent_id, comments.is_approved AS comments_is_approved, comments.nickname AS comments_nickname, comments.created_at AS comments_created_at 
+FROM comments 
+WHERE comments.user_id IN (?)
+2026-07-04 15:42:23,585 - sqlalchemy.engine.Engine - INFO - [generated in 0.00051s] (1,)
+2026-07-04 15:42:23,589 - sqlalchemy.engine.Engine - INFO - SELECT articles.author_id AS articles_author_id, articles.id AS articles_id, articles.title AS articles_title, articles.content AS articles_content, articles.summary AS articles_summary, articles.cover_image AS articles_cover_image, articles.view_count AS articles_view_count, articles.like_count AS articles_like_count, articles.status AS articles_status, articles.is_private AS articles_is_private, articles.category_id AS articles_category_id, articles.published_at AS articles_published_at, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at 
+FROM articles 
+WHERE articles.author_id IN (?)
+2026-07-04 15:42:23,590 - sqlalchemy.engine.Engine - INFO - [generated in 0.00059s] (1,)
+2026-07-04 15:42:23,592 - sqlalchemy.engine.Engine - INFO - SELECT likes.user_id AS likes_user_id, likes.id AS likes_id, likes.article_id AS likes_article_id, likes.created_at AS likes_created_at 
+FROM likes 
+WHERE likes.user_id IN (?)
+2026-07-04 15:42:23,593 - sqlalchemy.engine.Engine - INFO - [generated in 0.00034s] (1,)
+2026-07-04 15:42:23,816 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-07-04 15:42:23,820 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-07-04 15:42:23,822 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.username, users.email, users.hashed_password, users.avatar_url, users.role, users.bio, users.is_active, users.created_at, users.updated_at 
+FROM users 
+WHERE users.id = ?
+2026-07-04 15:42:23,822 - sqlalchemy.engine.Engine - INFO - [generated in 0.00060s] (1,)
+2026-07-04 15:42:23,824 - sqlalchemy.engine.Engine - INFO - SELECT comments.user_id AS comments_user_id, comments.id AS comments_id, comments.content AS comments_content, comments.article_id AS comments_article_id, comments.parent_id AS comments_parent_id, comments.is_approved AS comments_is_approved, comments.nickname AS comments_nickname, comments.created_at AS comments_created_at 
+FROM comments 
+WHERE comments.user_id IN (?)
+2026-07-04 15:42:23,824 - sqlalchemy.engine.Engine - INFO - [cached since 0.2401s ago] (1,)
+2026-07-04 15:42:23,826 - sqlalchemy.engine.Engine - INFO - SELECT articles.author_id AS articles_author_id, articles.id AS articles_id, articles.title AS articles_title, articles.content AS articles_content, articles.summary AS articles_summary, articles.cover_image AS articles_cover_image, articles.view_count AS articles_view_count, articles.like_count AS articles_like_count, articles.status AS articles_status, articles.is_private AS articles_is_private, articles.category_id AS articles_category_id, articles.published_at AS articles_published_at, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at 
+FROM articles 
+WHERE articles.author_id IN (?)
+2026-07-04 15:42:23,827 - sqlalchemy.engine.Engine - INFO - [cached since 0.2377s ago] (1,)
+2026-07-04 15:42:23,829 - sqlalchemy.engine.Engine - INFO - SELECT likes.user_id AS likes_user_id, likes.id AS likes_id, likes.article_id AS likes_article_id, likes.created_at AS likes_created_at 
+FROM likes 
+WHERE likes.user_id IN (?)
+2026-07-04 15:42:23,830 - sqlalchemy.engine.Engine - INFO - [cached since 0.2374s ago] (1,)
+2026-07-04 15:42:23,832 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.username, users.email, users.hashed_password, users.avatar_url, users.role, users.bio, users.is_active, users.created_at, users.updated_at 
+FROM users 
+WHERE users.id = ?
+2026-07-04 15:42:23,832 - sqlalchemy.engine.Engine - INFO - [cached since 0.01071s ago] (1,)
+2026-07-04 15:42:23,834 - sqlalchemy.engine.Engine - INFO - SELECT comments.user_id AS comments_user_id, comments.id AS comments_id, comments.content AS comments_content, comments.article_id AS comments_article_id, comments.parent_id AS comments_parent_id, comments.is_approved AS comments_is_approved, comments.nickname AS comments_nickname, comments.created_at AS comments_created_at 
+FROM comments 
+WHERE comments.user_id IN (?)
+2026-07-04 15:42:23,834 - sqlalchemy.engine.Engine - INFO - [cached since 0.2499s ago] (1,)
+2026-07-04 15:42:23,835 - sqlalchemy.engine.Engine - INFO - SELECT articles.author_id AS articles_author_id, articles.id AS articles_id, articles.title AS articles_title, articles.content AS articles_content, articles.summary AS articles_summary, articles.cover_image AS articles_cover_image, articles.view_count AS articles_view_count, articles.like_count AS articles_like_count, articles.status AS articles_status, articles.is_private AS articles_is_private, articles.category_id AS articles_category_id, articles.published_at AS articles_published_at, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at 
+FROM articles 
+WHERE articles.author_id IN (?)
+2026-07-04 15:42:23,836 - sqlalchemy.engine.Engine - INFO - [cached since 0.2468s ago] (1,)
+2026-07-04 15:42:23,838 - sqlalchemy.engine.Engine - INFO - SELECT likes.user_id AS likes_user_id, likes.id AS likes_id, likes.article_id AS likes_article_id, likes.created_at AS likes_created_at 
+FROM likes 
+WHERE likes.user_id IN (?)
+2026-07-04 15:42:23,838 - sqlalchemy.engine.Engine - INFO - [cached since 0.2458s ago] (1,)
+2026-07-04 15:42:23,846 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-07-04 15:43:29,511 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-07-04 15:43:29,512 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.username, users.email, users.hashed_password, users.avatar_url, users.role, users.bio, users.is_active, users.created_at, users.updated_at 
+FROM users 
+WHERE users.id = ?
+2026-07-04 15:43:29,512 - sqlalchemy.engine.Engine - INFO - [cached since 65.69s ago] (1,)
+2026-07-04 15:43:29,514 - sqlalchemy.engine.Engine - INFO - SELECT comments.user_id AS comments_user_id, comments.id AS comments_id, comments.content AS comments_content, comments.article_id AS comments_article_id, comments.parent_id AS comments_parent_id, comments.is_approved AS comments_is_approved, comments.nickname AS comments_nickname, comments.created_at AS comments_created_at 
+FROM comments 
+WHERE comments.user_id IN (?)
+2026-07-04 15:43:29,514 - sqlalchemy.engine.Engine - INFO - [cached since 65.93s ago] (1,)
+2026-07-04 15:43:29,515 - sqlalchemy.engine.Engine - INFO - SELECT articles.author_id AS articles_author_id, articles.id AS articles_id, articles.title AS articles_title, articles.content AS articles_content, articles.summary AS articles_summary, articles.cover_image AS articles_cover_image, articles.view_count AS articles_view_count, articles.like_count AS articles_like_count, articles.status AS articles_status, articles.is_private AS articles_is_private, articles.category_id AS articles_category_id, articles.published_at AS articles_published_at, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at 
+FROM articles 
+WHERE articles.author_id IN (?)
+2026-07-04 15:43:29,516 - sqlalchemy.engine.Engine - INFO - [cached since 65.93s ago] (1,)
+2026-07-04 15:43:29,517 - sqlalchemy.engine.Engine - INFO - SELECT likes.user_id AS likes_user_id, likes.id AS likes_id, likes.article_id AS likes_article_id, likes.created_at AS likes_created_at 
+FROM likes 
+WHERE likes.user_id IN (?)
+2026-07-04 15:43:29,518 - sqlalchemy.engine.Engine - INFO - [cached since 65.93s ago] (1,)
+2026-07-04 15:43:29,519 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.username, users.email, users.hashed_password, users.avatar_url, users.role, users.bio, users.is_active, users.created_at, users.updated_at 
+FROM users 
+WHERE users.id = ?
+2026-07-04 15:43:29,519 - sqlalchemy.engine.Engine - INFO - [cached since 65.7s ago] (1,)
+2026-07-04 15:43:29,521 - sqlalchemy.engine.Engine - INFO - SELECT comments.user_id AS comments_user_id, comments.id AS comments_id, comments.content AS comments_content, comments.article_id AS comments_article_id, comments.parent_id AS comments_parent_id, comments.is_approved AS comments_is_approved, comments.nickname AS comments_nickname, comments.created_at AS comments_created_at 
+FROM comments 
+WHERE comments.user_id IN (?)
+2026-07-04 15:43:29,521 - sqlalchemy.engine.Engine - INFO - [cached since 65.94s ago] (1,)
+2026-07-04 15:43:29,522 - sqlalchemy.engine.Engine - INFO - SELECT articles.author_id AS articles_author_id, articles.id AS articles_id, articles.title AS articles_title, articles.content AS articles_content, articles.summary AS articles_summary, articles.cover_image AS articles_cover_image, articles.view_count AS articles_view_count, articles.like_count AS articles_like_count, articles.status AS articles_status, articles.is_private AS articles_is_private, articles.category_id AS articles_category_id, articles.published_at AS articles_published_at, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at 
+FROM articles 
+WHERE articles.author_id IN (?)
+2026-07-04 15:43:29,522 - sqlalchemy.engine.Engine - INFO - [cached since 65.93s ago] (1,)
+2026-07-04 15:43:29,523 - sqlalchemy.engine.Engine - INFO - SELECT likes.user_id AS likes_user_id, likes.id AS likes_id, likes.article_id AS likes_article_id, likes.created_at AS likes_created_at 
+FROM likes 
+WHERE likes.user_id IN (?)
+2026-07-04 15:43:29,523 - sqlalchemy.engine.Engine - INFO - [cached since 65.93s ago] (1,)
+2026-07-04 15:43:29,526 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-07-04 15:43:33,219 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-07-04 15:43:33,219 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.username, users.email, users.hashed_password, users.avatar_url, users.role, users.bio, users.is_active, users.created_at, users.updated_at 
+FROM users 
+WHERE users.id = ?
+2026-07-04 15:43:33,219 - sqlalchemy.engine.Engine - INFO - [cached since 69.4s ago] (1,)
+2026-07-04 15:43:33,221 - sqlalchemy.engine.Engine - INFO - SELECT comments.user_id AS comments_user_id, comments.id AS comments_id, comments.content AS comments_content, comments.article_id AS comments_article_id, comments.parent_id AS comments_parent_id, comments.is_approved AS comments_is_approved, comments.nickname AS comments_nickname, comments.created_at AS comments_created_at 
+FROM comments 
+WHERE comments.user_id IN (?)
+2026-07-04 15:43:33,221 - sqlalchemy.engine.Engine - INFO - [cached since 69.64s ago] (1,)
+2026-07-04 15:43:33,222 - sqlalchemy.engine.Engine - INFO - SELECT articles.author_id AS articles_author_id, articles.id AS articles_id, articles.title AS articles_title, articles.content AS articles_content, articles.summary AS articles_summary, articles.cover_image AS articles_cover_image, articles.view_count AS articles_view_count, articles.like_count AS articles_like_count, articles.status AS articles_status, articles.is_private AS articles_is_private, articles.category_id AS articles_category_id, articles.published_at AS articles_published_at, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at 
+FROM articles 
+WHERE articles.author_id IN (?)
+2026-07-04 15:43:33,222 - sqlalchemy.engine.Engine - INFO - [cached since 69.63s ago] (1,)
+2026-07-04 15:43:33,224 - sqlalchemy.engine.Engine - INFO - SELECT likes.user_id AS likes_user_id, likes.id AS likes_id, likes.article_id AS likes_article_id, likes.created_at AS likes_created_at 
+FROM likes 
+WHERE likes.user_id IN (?)
+2026-07-04 15:43:33,224 - sqlalchemy.engine.Engine - INFO - [cached since 69.63s ago] (1,)
+2026-07-04 15:43:33,225 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.username, users.email, users.hashed_password, users.avatar_url, users.role, users.bio, users.is_active, users.created_at, users.updated_at 
+FROM users 
+WHERE users.id = ?
+2026-07-04 15:43:33,226 - sqlalchemy.engine.Engine - INFO - [cached since 69.4s ago] (1,)
+2026-07-04 15:43:33,227 - sqlalchemy.engine.Engine - INFO - SELECT comments.user_id AS comments_user_id, comments.id AS comments_id, comments.content AS comments_content, comments.article_id AS comments_article_id, comments.parent_id AS comments_parent_id, comments.is_approved AS comments_is_approved, comments.nickname AS comments_nickname, comments.created_at AS comments_created_at 
+FROM comments 
+WHERE comments.user_id IN (?)
+2026-07-04 15:43:33,227 - sqlalchemy.engine.Engine - INFO - [cached since 69.64s ago] (1,)
+2026-07-04 15:43:33,228 - sqlalchemy.engine.Engine - INFO - SELECT articles.author_id AS articles_author_id, articles.id AS articles_id, articles.title AS articles_title, articles.content AS articles_content, articles.summary AS articles_summary, articles.cover_image AS articles_cover_image, articles.view_count AS articles_view_count, articles.like_count AS articles_like_count, articles.status AS articles_status, articles.is_private AS articles_is_private, articles.category_id AS articles_category_id, articles.published_at AS articles_published_at, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at 
+FROM articles 
+WHERE articles.author_id IN (?)
+2026-07-04 15:43:33,229 - sqlalchemy.engine.Engine - INFO - [cached since 69.64s ago] (1,)
+2026-07-04 15:43:33,230 - sqlalchemy.engine.Engine - INFO - SELECT likes.user_id AS likes_user_id, likes.id AS likes_id, likes.article_id AS likes_article_id, likes.created_at AS likes_created_at 
+FROM likes 
+WHERE likes.user_id IN (?)
+2026-07-04 15:43:33,230 - sqlalchemy.engine.Engine - INFO - [cached since 69.64s ago] (1,)
+2026-07-04 15:43:33,232 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-07-04 15:44:26,585 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-07-04 15:44:26,585 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.username, users.email, users.hashed_password, users.avatar_url, users.role, users.bio, users.is_active, users.created_at, users.updated_at 
+FROM users 
+WHERE users.id = ?
+2026-07-04 15:44:26,586 - sqlalchemy.engine.Engine - INFO - [cached since 122.8s ago] (1,)
+2026-07-04 15:44:26,588 - sqlalchemy.engine.Engine - INFO - SELECT comments.user_id AS comments_user_id, comments.id AS comments_id, comments.content AS comments_content, comments.article_id AS comments_article_id, comments.parent_id AS comments_parent_id, comments.is_approved AS comments_is_approved, comments.nickname AS comments_nickname, comments.created_at AS comments_created_at 
+FROM comments 
+WHERE comments.user_id IN (?)
+2026-07-04 15:44:26,588 - sqlalchemy.engine.Engine - INFO - [cached since 123s ago] (1,)
+2026-07-04 15:44:26,590 - sqlalchemy.engine.Engine - INFO - SELECT articles.author_id AS articles_author_id, articles.id AS articles_id, articles.title AS articles_title, articles.content AS articles_content, articles.summary AS articles_summary, articles.cover_image AS articles_cover_image, articles.view_count AS articles_view_count, articles.like_count AS articles_like_count, articles.status AS articles_status, articles.is_private AS articles_is_private, articles.category_id AS articles_category_id, articles.published_at AS articles_published_at, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at 
+FROM articles 
+WHERE articles.author_id IN (?)
+2026-07-04 15:44:26,591 - sqlalchemy.engine.Engine - INFO - [cached since 123s ago] (1,)
+2026-07-04 15:44:26,593 - sqlalchemy.engine.Engine - INFO - SELECT likes.user_id AS likes_user_id, likes.id AS likes_id, likes.article_id AS likes_article_id, likes.created_at AS likes_created_at 
+FROM likes 
+WHERE likes.user_id IN (?)
+2026-07-04 15:44:26,593 - sqlalchemy.engine.Engine - INFO - [cached since 123s ago] (1,)
+2026-07-04 15:44:26,608 - sqlalchemy.engine.Engine - INFO - UPDATE users SET avatar_url=?, updated_at=CURRENT_TIMESTAMP WHERE users.id = ?
+2026-07-04 15:44:26,619 - sqlalchemy.engine.Engine - INFO - [generated in 0.01076s] ('/uploads/avatar/88a3ac40739044b1a74b8a813ca33b9a.png', 1)
+2026-07-04 15:44:26,628 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.username, users.email, users.hashed_password, users.avatar_url, users.role, users.bio, users.is_active, users.created_at, users.updated_at 
+FROM users 
+WHERE users.id = ?
+2026-07-04 15:44:26,628 - sqlalchemy.engine.Engine - INFO - [generated in 0.00058s] (1,)
+2026-07-04 15:44:26,631 - sqlalchemy.engine.Engine - INFO - SELECT comments.id AS comments_id, comments.content AS comments_content, comments.article_id AS comments_article_id, comments.user_id AS comments_user_id, comments.parent_id AS comments_parent_id, comments.is_approved AS comments_is_approved, comments.nickname AS comments_nickname, comments.created_at AS comments_created_at 
+FROM comments 
+WHERE ? = comments.user_id
+2026-07-04 15:44:26,632 - sqlalchemy.engine.Engine - INFO - [generated in 0.00055s] (1,)
+2026-07-04 15:44:26,634 - sqlalchemy.engine.Engine - INFO - SELECT articles.id AS articles_id, articles.title AS articles_title, articles.content AS articles_content, articles.summary AS articles_summary, articles.cover_image AS articles_cover_image, articles.view_count AS articles_view_count, articles.like_count AS articles_like_count, articles.status AS articles_status, articles.is_private AS articles_is_private, articles.author_id AS articles_author_id, articles.category_id AS articles_category_id, articles.published_at AS articles_published_at, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at 
+FROM articles 
+WHERE ? = articles.author_id
+2026-07-04 15:44:26,635 - sqlalchemy.engine.Engine - INFO - [generated in 0.00044s] (1,)
+2026-07-04 15:44:26,637 - sqlalchemy.engine.Engine - INFO - SELECT likes.id AS likes_id, likes.user_id AS likes_user_id, likes.article_id AS likes_article_id, likes.created_at AS likes_created_at 
+FROM likes 
+WHERE ? = likes.user_id
+2026-07-04 15:44:26,638 - sqlalchemy.engine.Engine - INFO - [generated in 0.00061s] (1,)
+2026-07-04 15:44:26,643 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-07-04 15:44:30,339 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-07-04 15:44:30,340 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.username, users.email, users.hashed_password, users.avatar_url, users.role, users.bio, users.is_active, users.created_at, users.updated_at 
+FROM users 
+WHERE users.id = ?
+2026-07-04 15:44:30,340 - sqlalchemy.engine.Engine - INFO - [cached since 126.5s ago] (1,)
+2026-07-04 15:44:30,342 - sqlalchemy.engine.Engine - INFO - SELECT comments.user_id AS comments_user_id, comments.id AS comments_id, comments.content AS comments_content, comments.article_id AS comments_article_id, comments.parent_id AS comments_parent_id, comments.is_approved AS comments_is_approved, comments.nickname AS comments_nickname, comments.created_at AS comments_created_at 
+FROM comments 
+WHERE comments.user_id IN (?)
+2026-07-04 15:44:30,342 - sqlalchemy.engine.Engine - INFO - [cached since 126.8s ago] (1,)
+2026-07-04 15:44:30,344 - sqlalchemy.engine.Engine - INFO - SELECT articles.author_id AS articles_author_id, articles.id AS articles_id, articles.title AS articles_title, articles.content AS articles_content, articles.summary AS articles_summary, articles.cover_image AS articles_cover_image, articles.view_count AS articles_view_count, articles.like_count AS articles_like_count, articles.status AS articles_status, articles.is_private AS articles_is_private, articles.category_id AS articles_category_id, articles.published_at AS articles_published_at, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at 
+FROM articles 
+WHERE articles.author_id IN (?)
+2026-07-04 15:44:30,345 - sqlalchemy.engine.Engine - INFO - [cached since 126.8s ago] (1,)
+2026-07-04 15:44:30,347 - sqlalchemy.engine.Engine - INFO - SELECT likes.user_id AS likes_user_id, likes.id AS likes_id, likes.article_id AS likes_article_id, likes.created_at AS likes_created_at 
+FROM likes 
+WHERE likes.user_id IN (?)
+2026-07-04 15:44:30,347 - sqlalchemy.engine.Engine - INFO - [cached since 126.8s ago] (1,)
+2026-07-04 15:44:30,352 - sqlalchemy.engine.Engine - INFO - UPDATE users SET avatar_url=?, updated_at=CURRENT_TIMESTAMP WHERE users.id = ?
+2026-07-04 15:44:30,352 - sqlalchemy.engine.Engine - INFO - [cached since 3.744s ago] ('/uploads/avatar/1d5a625ac1524954b744ade244073016.png', 1)
+2026-07-04 15:44:30,356 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.username, users.email, users.hashed_password, users.avatar_url, users.role, users.bio, users.is_active, users.created_at, users.updated_at 
+FROM users 
+WHERE users.id = ?
+2026-07-04 15:44:30,356 - sqlalchemy.engine.Engine - INFO - [cached since 3.728s ago] (1,)
+2026-07-04 15:44:30,358 - sqlalchemy.engine.Engine - INFO - SELECT comments.id AS comments_id, comments.content AS comments_content, comments.article_id AS comments_article_id, comments.user_id AS comments_user_id, comments.parent_id AS comments_parent_id, comments.is_approved AS comments_is_approved, comments.nickname AS comments_nickname, comments.created_at AS comments_created_at 
+FROM comments 
+WHERE ? = comments.user_id
+2026-07-04 15:44:30,358 - sqlalchemy.engine.Engine - INFO - [cached since 3.727s ago] (1,)
+2026-07-04 15:44:30,359 - sqlalchemy.engine.Engine - INFO - SELECT articles.id AS articles_id, articles.title AS articles_title, articles.content AS articles_content, articles.summary AS articles_summary, articles.cover_image AS articles_cover_image, articles.view_count AS articles_view_count, articles.like_count AS articles_like_count, articles.status AS articles_status, articles.is_private AS articles_is_private, articles.author_id AS articles_author_id, articles.category_id AS articles_category_id, articles.published_at AS articles_published_at, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at 
+FROM articles 
+WHERE ? = articles.author_id
+2026-07-04 15:44:30,360 - sqlalchemy.engine.Engine - INFO - [cached since 3.725s ago] (1,)
+2026-07-04 15:44:30,361 - sqlalchemy.engine.Engine - INFO - SELECT likes.id AS likes_id, likes.user_id AS likes_user_id, likes.article_id AS likes_article_id, likes.created_at AS likes_created_at 
+FROM likes 
+WHERE ? = likes.user_id
+2026-07-04 15:44:30,361 - sqlalchemy.engine.Engine - INFO - [cached since 3.724s ago] (1,)
+2026-07-04 15:44:30,363 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-07-04 15:44:32,750 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-07-04 15:44:32,751 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.username, users.email, users.hashed_password, users.avatar_url, users.role, users.bio, users.is_active, users.created_at, users.updated_at 
+FROM users 
+WHERE users.id = ?
+2026-07-04 15:44:32,752 - sqlalchemy.engine.Engine - INFO - [cached since 128.9s ago] (1,)
+2026-07-04 15:44:32,754 - sqlalchemy.engine.Engine - INFO - SELECT comments.user_id AS comments_user_id, comments.id AS comments_id, comments.content AS comments_content, comments.article_id AS comments_article_id, comments.parent_id AS comments_parent_id, comments.is_approved AS comments_is_approved, comments.nickname AS comments_nickname, comments.created_at AS comments_created_at 
+FROM comments 
+WHERE comments.user_id IN (?)
+2026-07-04 15:44:32,755 - sqlalchemy.engine.Engine - INFO - [cached since 129.2s ago] (1,)
+2026-07-04 15:44:32,759 - sqlalchemy.engine.Engine - INFO - SELECT articles.author_id AS articles_author_id, articles.id AS articles_id, articles.title AS articles_title, articles.content AS articles_content, articles.summary AS articles_summary, articles.cover_image AS articles_cover_image, articles.view_count AS articles_view_count, articles.like_count AS articles_like_count, articles.status AS articles_status, articles.is_private AS articles_is_private, articles.category_id AS articles_category_id, articles.published_at AS articles_published_at, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at 
+FROM articles 
+WHERE articles.author_id IN (?)
+2026-07-04 15:44:32,759 - sqlalchemy.engine.Engine - INFO - [cached since 129.2s ago] (1,)
+2026-07-04 15:44:32,762 - sqlalchemy.engine.Engine - INFO - SELECT likes.user_id AS likes_user_id, likes.id AS likes_id, likes.article_id AS likes_article_id, likes.created_at AS likes_created_at 
+FROM likes 
+WHERE likes.user_id IN (?)
+2026-07-04 15:44:32,762 - sqlalchemy.engine.Engine - INFO - [cached since 129.2s ago] (1,)
+2026-07-04 15:44:32,765 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.username, users.email, users.hashed_password, users.avatar_url, users.role, users.bio, users.is_active, users.created_at, users.updated_at 
+FROM users 
+WHERE users.id = ?
+2026-07-04 15:44:32,765 - sqlalchemy.engine.Engine - INFO - [cached since 128.9s ago] (1,)
+2026-07-04 15:44:32,767 - sqlalchemy.engine.Engine - INFO - SELECT comments.user_id AS comments_user_id, comments.id AS comments_id, comments.content AS comments_content, comments.article_id AS comments_article_id, comments.parent_id AS comments_parent_id, comments.is_approved AS comments_is_approved, comments.nickname AS comments_nickname, comments.created_at AS comments_created_at 
+FROM comments 
+WHERE comments.user_id IN (?)
+2026-07-04 15:44:32,767 - sqlalchemy.engine.Engine - INFO - [cached since 129.2s ago] (1,)
+2026-07-04 15:44:32,768 - sqlalchemy.engine.Engine - INFO - SELECT articles.author_id AS articles_author_id, articles.id AS articles_id, articles.title AS articles_title, articles.content AS articles_content, articles.summary AS articles_summary, articles.cover_image AS articles_cover_image, articles.view_count AS articles_view_count, articles.like_count AS articles_like_count, articles.status AS articles_status, articles.is_private AS articles_is_private, articles.category_id AS articles_category_id, articles.published_at AS articles_published_at, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at 
+FROM articles 
+WHERE articles.author_id IN (?)
+2026-07-04 15:44:32,769 - sqlalchemy.engine.Engine - INFO - [cached since 129.2s ago] (1,)
+2026-07-04 15:44:32,770 - sqlalchemy.engine.Engine - INFO - SELECT likes.user_id AS likes_user_id, likes.id AS likes_id, likes.article_id AS likes_article_id, likes.created_at AS likes_created_at 
+FROM likes 
+WHERE likes.user_id IN (?)
+2026-07-04 15:44:32,771 - sqlalchemy.engine.Engine - INFO - [cached since 129.2s ago] (1,)
+2026-07-04 15:44:32,773 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-07-04 15:44:43,628 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-07-04 15:44:43,629 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-07-04 15:44:43,629 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:44:43,631 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("categories")
+2026-07-04 15:44:43,631 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:44:43,632 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("article_tags")
+2026-07-04 15:44:43,632 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:44:43,633 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("tags")
+2026-07-04 15:44:43,633 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:44:43,633 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("articles")
+2026-07-04 15:44:43,634 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:44:43,634 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("comments")
+2026-07-04 15:44:43,635 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:44:43,635 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("subscriptions")
+2026-07-04 15:44:43,636 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:44:43,636 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("likes")
+2026-07-04 15:44:43,636 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:44:43,637 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-07-04 15:45:24,548 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-07-04 15:45:24,549 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-07-04 15:45:24,549 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:45:24,550 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("categories")
+2026-07-04 15:45:24,550 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:45:24,551 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("article_tags")
+2026-07-04 15:45:24,551 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:45:24,552 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("tags")
+2026-07-04 15:45:24,552 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:45:24,553 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("articles")
+2026-07-04 15:45:24,553 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:45:24,554 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("comments")
+2026-07-04 15:45:24,554 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:45:24,555 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("subscriptions")
+2026-07-04 15:45:24,555 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:45:24,556 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("likes")
+2026-07-04 15:45:24,556 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:45:24,557 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-07-04 15:45:27,866 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-07-04 15:45:27,866 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-07-04 15:45:27,866 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:45:27,868 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("categories")
+2026-07-04 15:45:27,868 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:45:27,869 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("article_tags")
+2026-07-04 15:45:27,869 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:45:27,870 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("tags")
+2026-07-04 15:45:27,870 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:45:27,871 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("articles")
+2026-07-04 15:45:27,871 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:45:27,872 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("comments")
+2026-07-04 15:45:27,872 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:45:27,873 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("subscriptions")
+2026-07-04 15:45:27,873 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:45:27,874 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("likes")
+2026-07-04 15:45:27,874 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:45:27,875 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-07-04 15:45:37,792 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-07-04 15:45:37,867 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.username, users.email, users.hashed_password, users.avatar_url, users.role, users.bio, users.is_active, users.created_at, users.updated_at 
+FROM users 
+WHERE users.id = ?
+2026-07-04 15:45:37,868 - sqlalchemy.engine.Engine - INFO - [generated in 0.00061s] (1,)
+2026-07-04 15:45:37,873 - sqlalchemy.engine.Engine - INFO - SELECT comments.user_id AS comments_user_id, comments.id AS comments_id, comments.content AS comments_content, comments.article_id AS comments_article_id, comments.parent_id AS comments_parent_id, comments.is_approved AS comments_is_approved, comments.nickname AS comments_nickname, comments.created_at AS comments_created_at 
+FROM comments 
+WHERE comments.user_id IN (?)
+2026-07-04 15:45:37,873 - sqlalchemy.engine.Engine - INFO - [generated in 0.00069s] (1,)
+2026-07-04 15:45:37,878 - sqlalchemy.engine.Engine - INFO - SELECT articles.author_id AS articles_author_id, articles.id AS articles_id, articles.title AS articles_title, articles.content AS articles_content, articles.summary AS articles_summary, articles.cover_image AS articles_cover_image, articles.view_count AS articles_view_count, articles.like_count AS articles_like_count, articles.status AS articles_status, articles.is_private AS articles_is_private, articles.category_id AS articles_category_id, articles.published_at AS articles_published_at, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at 
+FROM articles 
+WHERE articles.author_id IN (?)
+2026-07-04 15:45:37,878 - sqlalchemy.engine.Engine - INFO - [generated in 0.00060s] (1,)
+2026-07-04 15:45:37,882 - sqlalchemy.engine.Engine - INFO - SELECT likes.user_id AS likes_user_id, likes.id AS likes_id, likes.article_id AS likes_article_id, likes.created_at AS likes_created_at 
+FROM likes 
+WHERE likes.user_id IN (?)
+2026-07-04 15:45:37,883 - sqlalchemy.engine.Engine - INFO - [generated in 0.00061s] (1,)
+2026-07-04 15:45:37,885 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.username, users.email, users.hashed_password, users.avatar_url, users.role, users.bio, users.is_active, users.created_at, users.updated_at 
+FROM users 
+WHERE users.id = ?
+2026-07-04 15:45:37,886 - sqlalchemy.engine.Engine - INFO - [cached since 0.01867s ago] (1,)
+2026-07-04 15:45:37,888 - sqlalchemy.engine.Engine - INFO - SELECT comments.user_id AS comments_user_id, comments.id AS comments_id, comments.content AS comments_content, comments.article_id AS comments_article_id, comments.parent_id AS comments_parent_id, comments.is_approved AS comments_is_approved, comments.nickname AS comments_nickname, comments.created_at AS comments_created_at 
+FROM comments 
+WHERE comments.user_id IN (?)
+2026-07-04 15:45:37,889 - sqlalchemy.engine.Engine - INFO - [cached since 0.01577s ago] (1,)
+2026-07-04 15:45:37,890 - sqlalchemy.engine.Engine - INFO - SELECT articles.author_id AS articles_author_id, articles.id AS articles_id, articles.title AS articles_title, articles.content AS articles_content, articles.summary AS articles_summary, articles.cover_image AS articles_cover_image, articles.view_count AS articles_view_count, articles.like_count AS articles_like_count, articles.status AS articles_status, articles.is_private AS articles_is_private, articles.category_id AS articles_category_id, articles.published_at AS articles_published_at, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at 
+FROM articles 
+WHERE articles.author_id IN (?)
+2026-07-04 15:45:37,891 - sqlalchemy.engine.Engine - INFO - [cached since 0.01281s ago] (1,)
+2026-07-04 15:45:37,893 - sqlalchemy.engine.Engine - INFO - SELECT likes.user_id AS likes_user_id, likes.id AS likes_id, likes.article_id AS likes_article_id, likes.created_at AS likes_created_at 
+FROM likes 
+WHERE likes.user_id IN (?)
+2026-07-04 15:45:37,894 - sqlalchemy.engine.Engine - INFO - [cached since 0.01201s ago] (1,)
+2026-07-04 15:45:37,900 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-07-04 15:45:42,269 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-07-04 15:45:42,270 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.username, users.email, users.hashed_password, users.avatar_url, users.role, users.bio, users.is_active, users.created_at, users.updated_at 
+FROM users 
+WHERE users.id = ?
+2026-07-04 15:45:42,270 - sqlalchemy.engine.Engine - INFO - [cached since 4.403s ago] (1,)
+2026-07-04 15:45:42,273 - sqlalchemy.engine.Engine - INFO - SELECT comments.user_id AS comments_user_id, comments.id AS comments_id, comments.content AS comments_content, comments.article_id AS comments_article_id, comments.parent_id AS comments_parent_id, comments.is_approved AS comments_is_approved, comments.nickname AS comments_nickname, comments.created_at AS comments_created_at 
+FROM comments 
+WHERE comments.user_id IN (?)
+2026-07-04 15:45:42,273 - sqlalchemy.engine.Engine - INFO - [cached since 4.401s ago] (1,)
+2026-07-04 15:45:42,275 - sqlalchemy.engine.Engine - INFO - SELECT articles.author_id AS articles_author_id, articles.id AS articles_id, articles.title AS articles_title, articles.content AS articles_content, articles.summary AS articles_summary, articles.cover_image AS articles_cover_image, articles.view_count AS articles_view_count, articles.like_count AS articles_like_count, articles.status AS articles_status, articles.is_private AS articles_is_private, articles.category_id AS articles_category_id, articles.published_at AS articles_published_at, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at 
+FROM articles 
+WHERE articles.author_id IN (?)
+2026-07-04 15:45:42,276 - sqlalchemy.engine.Engine - INFO - [cached since 4.398s ago] (1,)
+2026-07-04 15:45:42,280 - sqlalchemy.engine.Engine - INFO - SELECT likes.user_id AS likes_user_id, likes.id AS likes_id, likes.article_id AS likes_article_id, likes.created_at AS likes_created_at 
+FROM likes 
+WHERE likes.user_id IN (?)
+2026-07-04 15:45:42,280 - sqlalchemy.engine.Engine - INFO - [cached since 4.398s ago] (1,)
+2026-07-04 15:45:42,283 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-07-04 15:46:56,457 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-07-04 15:46:56,458 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-07-04 15:46:56,458 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:46:56,459 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("categories")
+2026-07-04 15:46:56,460 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:46:56,461 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("article_tags")
+2026-07-04 15:46:56,461 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:46:56,461 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("tags")
+2026-07-04 15:46:56,462 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:46:56,462 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("articles")
+2026-07-04 15:46:56,462 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:46:56,463 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("comments")
+2026-07-04 15:46:56,464 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:46:56,466 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("subscriptions")
+2026-07-04 15:46:56,466 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:46:56,467 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("likes")
+2026-07-04 15:46:56,467 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:46:56,468 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-07-04 15:47:07,037 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-07-04 15:47:07,038 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-07-04 15:47:07,038 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:47:07,039 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("categories")
+2026-07-04 15:47:07,039 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:47:07,040 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("article_tags")
+2026-07-04 15:47:07,041 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:47:07,041 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("tags")
+2026-07-04 15:47:07,041 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:47:07,042 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("articles")
+2026-07-04 15:47:07,042 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:47:07,043 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("comments")
+2026-07-04 15:47:07,043 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:47:07,044 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("subscriptions")
+2026-07-04 15:47:07,044 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:47:07,045 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("likes")
+2026-07-04 15:47:07,045 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:47:07,046 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-07-04 15:47:08,344 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-07-04 15:47:08,378 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.username, users.email, users.hashed_password, users.avatar_url, users.role, users.bio, users.is_active, users.created_at, users.updated_at 
+FROM users 
+WHERE users.id = ?
+2026-07-04 15:47:08,378 - sqlalchemy.engine.Engine - INFO - [generated in 0.00049s] (1,)
+2026-07-04 15:47:08,382 - sqlalchemy.engine.Engine - INFO - SELECT comments.user_id AS comments_user_id, comments.id AS comments_id, comments.content AS comments_content, comments.article_id AS comments_article_id, comments.parent_id AS comments_parent_id, comments.is_approved AS comments_is_approved, comments.nickname AS comments_nickname, comments.created_at AS comments_created_at 
+FROM comments 
+WHERE comments.user_id IN (?)
+2026-07-04 15:47:08,389 - sqlalchemy.engine.Engine - INFO - [generated in 0.00706s] (1,)
+2026-07-04 15:47:08,396 - sqlalchemy.engine.Engine - INFO - SELECT articles.author_id AS articles_author_id, articles.id AS articles_id, articles.title AS articles_title, articles.content AS articles_content, articles.summary AS articles_summary, articles.cover_image AS articles_cover_image, articles.view_count AS articles_view_count, articles.like_count AS articles_like_count, articles.status AS articles_status, articles.is_private AS articles_is_private, articles.category_id AS articles_category_id, articles.published_at AS articles_published_at, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at 
+FROM articles 
+WHERE articles.author_id IN (?)
+2026-07-04 15:47:08,398 - sqlalchemy.engine.Engine - INFO - [generated in 0.00215s] (1,)
+2026-07-04 15:47:08,401 - sqlalchemy.engine.Engine - INFO - SELECT likes.user_id AS likes_user_id, likes.id AS likes_id, likes.article_id AS likes_article_id, likes.created_at AS likes_created_at 
+FROM likes 
+WHERE likes.user_id IN (?)
+2026-07-04 15:47:08,402 - sqlalchemy.engine.Engine - INFO - [generated in 0.00063s] (1,)
+2026-07-04 15:47:08,406 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.username, users.email, users.hashed_password, users.avatar_url, users.role, users.bio, users.is_active, users.created_at, users.updated_at 
+FROM users 
+WHERE users.id = ?
+2026-07-04 15:47:08,407 - sqlalchemy.engine.Engine - INFO - [cached since 0.02902s ago] (1,)
+2026-07-04 15:47:08,410 - sqlalchemy.engine.Engine - INFO - SELECT comments.user_id AS comments_user_id, comments.id AS comments_id, comments.content AS comments_content, comments.article_id AS comments_article_id, comments.parent_id AS comments_parent_id, comments.is_approved AS comments_is_approved, comments.nickname AS comments_nickname, comments.created_at AS comments_created_at 
+FROM comments 
+WHERE comments.user_id IN (?)
+2026-07-04 15:47:08,410 - sqlalchemy.engine.Engine - INFO - [cached since 0.02795s ago] (1,)
+2026-07-04 15:47:08,412 - sqlalchemy.engine.Engine - INFO - SELECT articles.author_id AS articles_author_id, articles.id AS articles_id, articles.title AS articles_title, articles.content AS articles_content, articles.summary AS articles_summary, articles.cover_image AS articles_cover_image, articles.view_count AS articles_view_count, articles.like_count AS articles_like_count, articles.status AS articles_status, articles.is_private AS articles_is_private, articles.category_id AS articles_category_id, articles.published_at AS articles_published_at, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at 
+FROM articles 
+WHERE articles.author_id IN (?)
+2026-07-04 15:47:08,413 - sqlalchemy.engine.Engine - INFO - [cached since 0.01778s ago] (1,)
+2026-07-04 15:47:08,416 - sqlalchemy.engine.Engine - INFO - SELECT likes.user_id AS likes_user_id, likes.id AS likes_id, likes.article_id AS likes_article_id, likes.created_at AS likes_created_at 
+FROM likes 
+WHERE likes.user_id IN (?)
+2026-07-04 15:47:08,416 - sqlalchemy.engine.Engine - INFO - [cached since 0.01481s ago] (1,)
+2026-07-04 15:47:08,423 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-07-04 15:47:10,726 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-07-04 15:47:10,727 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.username, users.email, users.hashed_password, users.avatar_url, users.role, users.bio, users.is_active, users.created_at, users.updated_at 
+FROM users 
+WHERE users.id = ?
+2026-07-04 15:47:10,727 - sqlalchemy.engine.Engine - INFO - [cached since 2.35s ago] (1,)
+2026-07-04 15:47:10,728 - sqlalchemy.engine.Engine - INFO - SELECT comments.user_id AS comments_user_id, comments.id AS comments_id, comments.content AS comments_content, comments.article_id AS comments_article_id, comments.parent_id AS comments_parent_id, comments.is_approved AS comments_is_approved, comments.nickname AS comments_nickname, comments.created_at AS comments_created_at 
+FROM comments 
+WHERE comments.user_id IN (?)
+2026-07-04 15:47:10,729 - sqlalchemy.engine.Engine - INFO - [cached since 2.347s ago] (1,)
+2026-07-04 15:47:10,730 - sqlalchemy.engine.Engine - INFO - SELECT articles.author_id AS articles_author_id, articles.id AS articles_id, articles.title AS articles_title, articles.content AS articles_content, articles.summary AS articles_summary, articles.cover_image AS articles_cover_image, articles.view_count AS articles_view_count, articles.like_count AS articles_like_count, articles.status AS articles_status, articles.is_private AS articles_is_private, articles.category_id AS articles_category_id, articles.published_at AS articles_published_at, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at 
+FROM articles 
+WHERE articles.author_id IN (?)
+2026-07-04 15:47:10,730 - sqlalchemy.engine.Engine - INFO - [cached since 2.335s ago] (1,)
+2026-07-04 15:47:10,732 - sqlalchemy.engine.Engine - INFO - SELECT likes.user_id AS likes_user_id, likes.id AS likes_id, likes.article_id AS likes_article_id, likes.created_at AS likes_created_at 
+FROM likes 
+WHERE likes.user_id IN (?)
+2026-07-04 15:47:10,732 - sqlalchemy.engine.Engine - INFO - [cached since 2.331s ago] (1,)
+2026-07-04 15:47:10,736 - sqlalchemy.engine.Engine - INFO - UPDATE users SET bio=?, updated_at=CURRENT_TIMESTAMP WHERE users.id = ?
+2026-07-04 15:47:10,737 - sqlalchemy.engine.Engine - INFO - [generated in 0.00068s] ('43535', 1)
+2026-07-04 15:47:10,741 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.username, users.email, users.hashed_password, users.avatar_url, users.role, users.bio, users.is_active, users.created_at, users.updated_at 
+FROM users 
+WHERE users.id = ?
+2026-07-04 15:47:10,741 - sqlalchemy.engine.Engine - INFO - [generated in 0.00037s] (1,)
+2026-07-04 15:47:10,743 - sqlalchemy.engine.Engine - INFO - SELECT comments.id AS comments_id, comments.content AS comments_content, comments.article_id AS comments_article_id, comments.user_id AS comments_user_id, comments.parent_id AS comments_parent_id, comments.is_approved AS comments_is_approved, comments.nickname AS comments_nickname, comments.created_at AS comments_created_at 
+FROM comments 
+WHERE ? = comments.user_id
+2026-07-04 15:47:10,744 - sqlalchemy.engine.Engine - INFO - [generated in 0.00044s] (1,)
+2026-07-04 15:47:10,746 - sqlalchemy.engine.Engine - INFO - SELECT articles.id AS articles_id, articles.title AS articles_title, articles.content AS articles_content, articles.summary AS articles_summary, articles.cover_image AS articles_cover_image, articles.view_count AS articles_view_count, articles.like_count AS articles_like_count, articles.status AS articles_status, articles.is_private AS articles_is_private, articles.author_id AS articles_author_id, articles.category_id AS articles_category_id, articles.published_at AS articles_published_at, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at 
+FROM articles 
+WHERE ? = articles.author_id
+2026-07-04 15:47:10,746 - sqlalchemy.engine.Engine - INFO - [generated in 0.00035s] (1,)
+2026-07-04 15:47:10,749 - sqlalchemy.engine.Engine - INFO - SELECT likes.id AS likes_id, likes.user_id AS likes_user_id, likes.article_id AS likes_article_id, likes.created_at AS likes_created_at 
+FROM likes 
+WHERE ? = likes.user_id
+2026-07-04 15:47:10,749 - sqlalchemy.engine.Engine - INFO - [generated in 0.00043s] (1,)
+2026-07-04 15:47:10,751 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-07-04 15:47:13,031 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-07-04 15:47:13,031 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.username, users.email, users.hashed_password, users.avatar_url, users.role, users.bio, users.is_active, users.created_at, users.updated_at 
+FROM users 
+WHERE users.id = ?
+2026-07-04 15:47:13,031 - sqlalchemy.engine.Engine - INFO - [cached since 4.654s ago] (1,)
+2026-07-04 15:47:13,033 - sqlalchemy.engine.Engine - INFO - SELECT comments.user_id AS comments_user_id, comments.id AS comments_id, comments.content AS comments_content, comments.article_id AS comments_article_id, comments.parent_id AS comments_parent_id, comments.is_approved AS comments_is_approved, comments.nickname AS comments_nickname, comments.created_at AS comments_created_at 
+FROM comments 
+WHERE comments.user_id IN (?)
+2026-07-04 15:47:13,034 - sqlalchemy.engine.Engine - INFO - [cached since 4.652s ago] (1,)
+2026-07-04 15:47:13,035 - sqlalchemy.engine.Engine - INFO - SELECT articles.author_id AS articles_author_id, articles.id AS articles_id, articles.title AS articles_title, articles.content AS articles_content, articles.summary AS articles_summary, articles.cover_image AS articles_cover_image, articles.view_count AS articles_view_count, articles.like_count AS articles_like_count, articles.status AS articles_status, articles.is_private AS articles_is_private, articles.category_id AS articles_category_id, articles.published_at AS articles_published_at, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at 
+FROM articles 
+WHERE articles.author_id IN (?)
+2026-07-04 15:47:13,035 - sqlalchemy.engine.Engine - INFO - [cached since 4.64s ago] (1,)
+2026-07-04 15:47:13,038 - sqlalchemy.engine.Engine - INFO - SELECT likes.user_id AS likes_user_id, likes.id AS likes_id, likes.article_id AS likes_article_id, likes.created_at AS likes_created_at 
+FROM likes 
+WHERE likes.user_id IN (?)
+2026-07-04 15:47:13,039 - sqlalchemy.engine.Engine - INFO - [cached since 4.638s ago] (1,)
+2026-07-04 15:47:13,042 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.username, users.email, users.hashed_password, users.avatar_url, users.role, users.bio, users.is_active, users.created_at, users.updated_at 
+FROM users 
+WHERE users.id = ?
+2026-07-04 15:47:13,042 - sqlalchemy.engine.Engine - INFO - [cached since 4.665s ago] (1,)
+2026-07-04 15:47:13,045 - sqlalchemy.engine.Engine - INFO - SELECT comments.user_id AS comments_user_id, comments.id AS comments_id, comments.content AS comments_content, comments.article_id AS comments_article_id, comments.parent_id AS comments_parent_id, comments.is_approved AS comments_is_approved, comments.nickname AS comments_nickname, comments.created_at AS comments_created_at 
+FROM comments 
+WHERE comments.user_id IN (?)
+2026-07-04 15:47:13,045 - sqlalchemy.engine.Engine - INFO - [cached since 4.663s ago] (1,)
+2026-07-04 15:47:13,047 - sqlalchemy.engine.Engine - INFO - SELECT articles.author_id AS articles_author_id, articles.id AS articles_id, articles.title AS articles_title, articles.content AS articles_content, articles.summary AS articles_summary, articles.cover_image AS articles_cover_image, articles.view_count AS articles_view_count, articles.like_count AS articles_like_count, articles.status AS articles_status, articles.is_private AS articles_is_private, articles.category_id AS articles_category_id, articles.published_at AS articles_published_at, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at 
+FROM articles 
+WHERE articles.author_id IN (?)
+2026-07-04 15:47:13,048 - sqlalchemy.engine.Engine - INFO - [cached since 4.652s ago] (1,)
+2026-07-04 15:47:13,050 - sqlalchemy.engine.Engine - INFO - SELECT likes.user_id AS likes_user_id, likes.id AS likes_id, likes.article_id AS likes_article_id, likes.created_at AS likes_created_at 
+FROM likes 
+WHERE likes.user_id IN (?)
+2026-07-04 15:47:13,051 - sqlalchemy.engine.Engine - INFO - [cached since 4.649s ago] (1,)
+2026-07-04 15:47:13,053 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-07-04 15:47:19,014 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-07-04 15:47:19,014 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.username, users.email, users.hashed_password, users.avatar_url, users.role, users.bio, users.is_active, users.created_at, users.updated_at 
+FROM users 
+WHERE users.id = ?
+2026-07-04 15:47:19,015 - sqlalchemy.engine.Engine - INFO - [cached since 10.64s ago] (1,)
+2026-07-04 15:47:19,017 - sqlalchemy.engine.Engine - INFO - SELECT comments.user_id AS comments_user_id, comments.id AS comments_id, comments.content AS comments_content, comments.article_id AS comments_article_id, comments.parent_id AS comments_parent_id, comments.is_approved AS comments_is_approved, comments.nickname AS comments_nickname, comments.created_at AS comments_created_at 
+FROM comments 
+WHERE comments.user_id IN (?)
+2026-07-04 15:47:19,018 - sqlalchemy.engine.Engine - INFO - [cached since 10.64s ago] (1,)
+2026-07-04 15:47:19,021 - sqlalchemy.engine.Engine - INFO - SELECT articles.author_id AS articles_author_id, articles.id AS articles_id, articles.title AS articles_title, articles.content AS articles_content, articles.summary AS articles_summary, articles.cover_image AS articles_cover_image, articles.view_count AS articles_view_count, articles.like_count AS articles_like_count, articles.status AS articles_status, articles.is_private AS articles_is_private, articles.category_id AS articles_category_id, articles.published_at AS articles_published_at, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at 
+FROM articles 
+WHERE articles.author_id IN (?)
+2026-07-04 15:47:19,021 - sqlalchemy.engine.Engine - INFO - [cached since 10.63s ago] (1,)
+2026-07-04 15:47:19,024 - sqlalchemy.engine.Engine - INFO - SELECT likes.user_id AS likes_user_id, likes.id AS likes_id, likes.article_id AS likes_article_id, likes.created_at AS likes_created_at 
+FROM likes 
+WHERE likes.user_id IN (?)
+2026-07-04 15:47:19,024 - sqlalchemy.engine.Engine - INFO - [cached since 10.62s ago] (1,)
+2026-07-04 15:47:19,032 - sqlalchemy.engine.Engine - INFO - UPDATE users SET avatar_url=?, updated_at=CURRENT_TIMESTAMP WHERE users.id = ?
+2026-07-04 15:47:19,032 - sqlalchemy.engine.Engine - INFO - [generated in 0.00062s] ('/uploads/avatar/fef6572d7532466dbce72fce6b55cf16.png', 1)
+2026-07-04 15:47:19,036 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.username, users.email, users.hashed_password, users.avatar_url, users.role, users.bio, users.is_active, users.created_at, users.updated_at 
+FROM users 
+WHERE users.id = ?
+2026-07-04 15:47:19,036 - sqlalchemy.engine.Engine - INFO - [cached since 8.295s ago] (1,)
+2026-07-04 15:47:19,038 - sqlalchemy.engine.Engine - INFO - SELECT comments.id AS comments_id, comments.content AS comments_content, comments.article_id AS comments_article_id, comments.user_id AS comments_user_id, comments.parent_id AS comments_parent_id, comments.is_approved AS comments_is_approved, comments.nickname AS comments_nickname, comments.created_at AS comments_created_at 
+FROM comments 
+WHERE ? = comments.user_id
+2026-07-04 15:47:19,038 - sqlalchemy.engine.Engine - INFO - [cached since 8.295s ago] (1,)
+2026-07-04 15:47:19,040 - sqlalchemy.engine.Engine - INFO - SELECT articles.id AS articles_id, articles.title AS articles_title, articles.content AS articles_content, articles.summary AS articles_summary, articles.cover_image AS articles_cover_image, articles.view_count AS articles_view_count, articles.like_count AS articles_like_count, articles.status AS articles_status, articles.is_private AS articles_is_private, articles.author_id AS articles_author_id, articles.category_id AS articles_category_id, articles.published_at AS articles_published_at, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at 
+FROM articles 
+WHERE ? = articles.author_id
+2026-07-04 15:47:19,041 - sqlalchemy.engine.Engine - INFO - [cached since 8.295s ago] (1,)
+2026-07-04 15:47:19,042 - sqlalchemy.engine.Engine - INFO - SELECT likes.id AS likes_id, likes.user_id AS likes_user_id, likes.article_id AS likes_article_id, likes.created_at AS likes_created_at 
+FROM likes 
+WHERE ? = likes.user_id
+2026-07-04 15:47:19,043 - sqlalchemy.engine.Engine - INFO - [cached since 8.294s ago] (1,)
+2026-07-04 15:47:19,045 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-07-04 15:48:40,576 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-07-04 15:48:40,576 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-07-04 15:48:40,576 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:48:40,578 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("categories")
+2026-07-04 15:48:40,578 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:48:40,579 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("article_tags")
+2026-07-04 15:48:40,579 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:48:40,580 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("tags")
+2026-07-04 15:48:40,580 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:48:40,581 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("articles")
+2026-07-04 15:48:40,581 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:48:40,582 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("comments")
+2026-07-04 15:48:40,582 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:48:40,583 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("subscriptions")
+2026-07-04 15:48:40,583 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:48:40,584 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("likes")
+2026-07-04 15:48:40,585 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:48:40,585 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-07-04 15:48:41,719 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-07-04 15:48:41,720 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-07-04 15:48:41,720 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:48:41,721 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("categories")
+2026-07-04 15:48:41,722 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:48:41,722 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("article_tags")
+2026-07-04 15:48:41,723 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:48:41,723 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("tags")
+2026-07-04 15:48:41,724 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:48:41,724 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("articles")
+2026-07-04 15:48:41,724 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:48:41,725 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("comments")
+2026-07-04 15:48:41,725 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:48:41,726 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("subscriptions")
+2026-07-04 15:48:41,727 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:48:41,728 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("likes")
+2026-07-04 15:48:41,728 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:48:41,729 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-07-04 15:48:48,686 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-07-04 15:48:48,750 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.username, users.email, users.hashed_password, users.avatar_url, users.role, users.bio, users.is_active, users.created_at, users.updated_at 
+FROM users 
+WHERE users.id = ?
+2026-07-04 15:48:48,751 - sqlalchemy.engine.Engine - INFO - [generated in 0.00058s] (1,)
+2026-07-04 15:48:48,755 - sqlalchemy.engine.Engine - INFO - SELECT comments.user_id AS comments_user_id, comments.id AS comments_id, comments.content AS comments_content, comments.article_id AS comments_article_id, comments.parent_id AS comments_parent_id, comments.is_approved AS comments_is_approved, comments.nickname AS comments_nickname, comments.created_at AS comments_created_at 
+FROM comments 
+WHERE comments.user_id IN (?)
+2026-07-04 15:48:48,755 - sqlalchemy.engine.Engine - INFO - [generated in 0.00060s] (1,)
+2026-07-04 15:48:48,760 - sqlalchemy.engine.Engine - INFO - SELECT articles.author_id AS articles_author_id, articles.id AS articles_id, articles.title AS articles_title, articles.content AS articles_content, articles.summary AS articles_summary, articles.cover_image AS articles_cover_image, articles.view_count AS articles_view_count, articles.like_count AS articles_like_count, articles.status AS articles_status, articles.is_private AS articles_is_private, articles.category_id AS articles_category_id, articles.published_at AS articles_published_at, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at 
+FROM articles 
+WHERE articles.author_id IN (?)
+2026-07-04 15:48:48,760 - sqlalchemy.engine.Engine - INFO - [generated in 0.00066s] (1,)
+2026-07-04 15:48:48,767 - sqlalchemy.engine.Engine - INFO - SELECT likes.user_id AS likes_user_id, likes.id AS likes_id, likes.article_id AS likes_article_id, likes.created_at AS likes_created_at 
+FROM likes 
+WHERE likes.user_id IN (?)
+2026-07-04 15:48:48,770 - sqlalchemy.engine.Engine - INFO - [generated in 0.00284s] (1,)
+2026-07-04 15:48:48,773 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.username, users.email, users.hashed_password, users.avatar_url, users.role, users.bio, users.is_active, users.created_at, users.updated_at 
+FROM users 
+WHERE users.id = ?
+2026-07-04 15:48:48,773 - sqlalchemy.engine.Engine - INFO - [cached since 0.02358s ago] (1,)
+2026-07-04 15:48:48,777 - sqlalchemy.engine.Engine - INFO - SELECT comments.user_id AS comments_user_id, comments.id AS comments_id, comments.content AS comments_content, comments.article_id AS comments_article_id, comments.parent_id AS comments_parent_id, comments.is_approved AS comments_is_approved, comments.nickname AS comments_nickname, comments.created_at AS comments_created_at 
+FROM comments 
+WHERE comments.user_id IN (?)
+2026-07-04 15:48:48,777 - sqlalchemy.engine.Engine - INFO - [cached since 0.02282s ago] (1,)
+2026-07-04 15:48:48,780 - sqlalchemy.engine.Engine - INFO - SELECT articles.author_id AS articles_author_id, articles.id AS articles_id, articles.title AS articles_title, articles.content AS articles_content, articles.summary AS articles_summary, articles.cover_image AS articles_cover_image, articles.view_count AS articles_view_count, articles.like_count AS articles_like_count, articles.status AS articles_status, articles.is_private AS articles_is_private, articles.category_id AS articles_category_id, articles.published_at AS articles_published_at, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at 
+FROM articles 
+WHERE articles.author_id IN (?)
+2026-07-04 15:48:48,788 - sqlalchemy.engine.Engine - INFO - [cached since 0.02848s ago] (1,)
+2026-07-04 15:48:48,793 - sqlalchemy.engine.Engine - INFO - SELECT likes.user_id AS likes_user_id, likes.id AS likes_id, likes.article_id AS likes_article_id, likes.created_at AS likes_created_at 
+FROM likes 
+WHERE likes.user_id IN (?)
+2026-07-04 15:48:48,793 - sqlalchemy.engine.Engine - INFO - [cached since 0.02637s ago] (1,)
+2026-07-04 15:48:48,801 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-07-04 15:48:50,936 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-07-04 15:48:50,937 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.username, users.email, users.hashed_password, users.avatar_url, users.role, users.bio, users.is_active, users.created_at, users.updated_at 
+FROM users 
+WHERE users.id = ?
+2026-07-04 15:48:50,937 - sqlalchemy.engine.Engine - INFO - [cached since 2.187s ago] (1,)
+2026-07-04 15:48:50,939 - sqlalchemy.engine.Engine - INFO - SELECT comments.user_id AS comments_user_id, comments.id AS comments_id, comments.content AS comments_content, comments.article_id AS comments_article_id, comments.parent_id AS comments_parent_id, comments.is_approved AS comments_is_approved, comments.nickname AS comments_nickname, comments.created_at AS comments_created_at 
+FROM comments 
+WHERE comments.user_id IN (?)
+2026-07-04 15:48:50,940 - sqlalchemy.engine.Engine - INFO - [cached since 2.185s ago] (1,)
+2026-07-04 15:48:50,942 - sqlalchemy.engine.Engine - INFO - SELECT articles.author_id AS articles_author_id, articles.id AS articles_id, articles.title AS articles_title, articles.content AS articles_content, articles.summary AS articles_summary, articles.cover_image AS articles_cover_image, articles.view_count AS articles_view_count, articles.like_count AS articles_like_count, articles.status AS articles_status, articles.is_private AS articles_is_private, articles.category_id AS articles_category_id, articles.published_at AS articles_published_at, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at 
+FROM articles 
+WHERE articles.author_id IN (?)
+2026-07-04 15:48:50,942 - sqlalchemy.engine.Engine - INFO - [cached since 2.182s ago] (1,)
+2026-07-04 15:48:50,944 - sqlalchemy.engine.Engine - INFO - SELECT likes.user_id AS likes_user_id, likes.id AS likes_id, likes.article_id AS likes_article_id, likes.created_at AS likes_created_at 
+FROM likes 
+WHERE likes.user_id IN (?)
+2026-07-04 15:48:50,945 - sqlalchemy.engine.Engine - INFO - [cached since 2.178s ago] (1,)
+2026-07-04 15:48:50,952 - sqlalchemy.engine.Engine - INFO - UPDATE users SET avatar_url=?, updated_at=CURRENT_TIMESTAMP WHERE users.id = ?
+2026-07-04 15:48:50,952 - sqlalchemy.engine.Engine - INFO - [generated in 0.00066s] ('/uploads/avatar/aab9885b6d2f4a94abe83dbc8ba75ea7.png', 1)
+2026-07-04 15:48:50,956 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.username, users.email, users.hashed_password, users.avatar_url, users.role, users.bio, users.is_active, users.created_at, users.updated_at 
+FROM users 
+WHERE users.id = ?
+2026-07-04 15:48:50,957 - sqlalchemy.engine.Engine - INFO - [generated in 0.00041s] (1,)
+2026-07-04 15:48:50,960 - sqlalchemy.engine.Engine - INFO - SELECT comments.id AS comments_id, comments.content AS comments_content, comments.article_id AS comments_article_id, comments.user_id AS comments_user_id, comments.parent_id AS comments_parent_id, comments.is_approved AS comments_is_approved, comments.nickname AS comments_nickname, comments.created_at AS comments_created_at 
+FROM comments 
+WHERE ? = comments.user_id
+2026-07-04 15:48:50,960 - sqlalchemy.engine.Engine - INFO - [generated in 0.00065s] (1,)
+2026-07-04 15:48:50,963 - sqlalchemy.engine.Engine - INFO - SELECT articles.id AS articles_id, articles.title AS articles_title, articles.content AS articles_content, articles.summary AS articles_summary, articles.cover_image AS articles_cover_image, articles.view_count AS articles_view_count, articles.like_count AS articles_like_count, articles.status AS articles_status, articles.is_private AS articles_is_private, articles.author_id AS articles_author_id, articles.category_id AS articles_category_id, articles.published_at AS articles_published_at, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at 
+FROM articles 
+WHERE ? = articles.author_id
+2026-07-04 15:48:50,964 - sqlalchemy.engine.Engine - INFO - [generated in 0.00037s] (1,)
+2026-07-04 15:48:50,966 - sqlalchemy.engine.Engine - INFO - SELECT likes.id AS likes_id, likes.user_id AS likes_user_id, likes.article_id AS likes_article_id, likes.created_at AS likes_created_at 
+FROM likes 
+WHERE ? = likes.user_id
+2026-07-04 15:48:50,967 - sqlalchemy.engine.Engine - INFO - [generated in 0.00048s] (1,)
+2026-07-04 15:48:50,970 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-07-04 15:49:38,911 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-07-04 15:49:38,912 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.username, users.email, users.hashed_password, users.avatar_url, users.role, users.bio, users.is_active, users.created_at, users.updated_at 
+FROM users 
+WHERE users.id = ?
+2026-07-04 15:49:38,912 - sqlalchemy.engine.Engine - INFO - [cached since 50.16s ago] (1,)
+2026-07-04 15:49:38,914 - sqlalchemy.engine.Engine - INFO - SELECT comments.user_id AS comments_user_id, comments.id AS comments_id, comments.content AS comments_content, comments.article_id AS comments_article_id, comments.parent_id AS comments_parent_id, comments.is_approved AS comments_is_approved, comments.nickname AS comments_nickname, comments.created_at AS comments_created_at 
+FROM comments 
+WHERE comments.user_id IN (?)
+2026-07-04 15:49:38,915 - sqlalchemy.engine.Engine - INFO - [cached since 50.16s ago] (1,)
+2026-07-04 15:49:38,917 - sqlalchemy.engine.Engine - INFO - SELECT articles.author_id AS articles_author_id, articles.id AS articles_id, articles.title AS articles_title, articles.content AS articles_content, articles.summary AS articles_summary, articles.cover_image AS articles_cover_image, articles.view_count AS articles_view_count, articles.like_count AS articles_like_count, articles.status AS articles_status, articles.is_private AS articles_is_private, articles.category_id AS articles_category_id, articles.published_at AS articles_published_at, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at 
+FROM articles 
+WHERE articles.author_id IN (?)
+2026-07-04 15:49:38,918 - sqlalchemy.engine.Engine - INFO - [cached since 50.16s ago] (1,)
+2026-07-04 15:49:38,920 - sqlalchemy.engine.Engine - INFO - SELECT likes.user_id AS likes_user_id, likes.id AS likes_id, likes.article_id AS likes_article_id, likes.created_at AS likes_created_at 
+FROM likes 
+WHERE likes.user_id IN (?)
+2026-07-04 15:49:38,921 - sqlalchemy.engine.Engine - INFO - [cached since 50.15s ago] (1,)
+2026-07-04 15:49:38,925 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.username, users.email, users.hashed_password, users.avatar_url, users.role, users.bio, users.is_active, users.created_at, users.updated_at 
+FROM users 
+WHERE users.id = ?
+2026-07-04 15:49:38,932 - sqlalchemy.engine.Engine - INFO - [cached since 50.18s ago] (1,)
+2026-07-04 15:49:38,936 - sqlalchemy.engine.Engine - INFO - SELECT comments.user_id AS comments_user_id, comments.id AS comments_id, comments.content AS comments_content, comments.article_id AS comments_article_id, comments.parent_id AS comments_parent_id, comments.is_approved AS comments_is_approved, comments.nickname AS comments_nickname, comments.created_at AS comments_created_at 
+FROM comments 
+WHERE comments.user_id IN (?)
+2026-07-04 15:49:38,936 - sqlalchemy.engine.Engine - INFO - [cached since 50.18s ago] (1,)
+2026-07-04 15:49:38,939 - sqlalchemy.engine.Engine - INFO - SELECT articles.author_id AS articles_author_id, articles.id AS articles_id, articles.title AS articles_title, articles.content AS articles_content, articles.summary AS articles_summary, articles.cover_image AS articles_cover_image, articles.view_count AS articles_view_count, articles.like_count AS articles_like_count, articles.status AS articles_status, articles.is_private AS articles_is_private, articles.category_id AS articles_category_id, articles.published_at AS articles_published_at, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at 
+FROM articles 
+WHERE articles.author_id IN (?)
+2026-07-04 15:49:38,940 - sqlalchemy.engine.Engine - INFO - [cached since 50.18s ago] (1,)
+2026-07-04 15:49:38,943 - sqlalchemy.engine.Engine - INFO - SELECT likes.user_id AS likes_user_id, likes.id AS likes_id, likes.article_id AS likes_article_id, likes.created_at AS likes_created_at 
+FROM likes 
+WHERE likes.user_id IN (?)
+2026-07-04 15:49:38,943 - sqlalchemy.engine.Engine - INFO - [cached since 50.18s ago] (1,)
+2026-07-04 15:49:38,947 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-07-04 15:49:42,099 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-07-04 15:49:42,100 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.username, users.email, users.hashed_password, users.avatar_url, users.role, users.bio, users.is_active, users.created_at, users.updated_at 
+FROM users 
+WHERE users.id = ?
+2026-07-04 15:49:42,100 - sqlalchemy.engine.Engine - INFO - [cached since 53.35s ago] (1,)
+2026-07-04 15:49:42,103 - sqlalchemy.engine.Engine - INFO - SELECT comments.user_id AS comments_user_id, comments.id AS comments_id, comments.content AS comments_content, comments.article_id AS comments_article_id, comments.parent_id AS comments_parent_id, comments.is_approved AS comments_is_approved, comments.nickname AS comments_nickname, comments.created_at AS comments_created_at 
+FROM comments 
+WHERE comments.user_id IN (?)
+2026-07-04 15:49:42,103 - sqlalchemy.engine.Engine - INFO - [cached since 53.35s ago] (1,)
+2026-07-04 15:49:42,105 - sqlalchemy.engine.Engine - INFO - SELECT articles.author_id AS articles_author_id, articles.id AS articles_id, articles.title AS articles_title, articles.content AS articles_content, articles.summary AS articles_summary, articles.cover_image AS articles_cover_image, articles.view_count AS articles_view_count, articles.like_count AS articles_like_count, articles.status AS articles_status, articles.is_private AS articles_is_private, articles.category_id AS articles_category_id, articles.published_at AS articles_published_at, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at 
+FROM articles 
+WHERE articles.author_id IN (?)
+2026-07-04 15:49:42,106 - sqlalchemy.engine.Engine - INFO - [cached since 53.35s ago] (1,)
+2026-07-04 15:49:42,108 - sqlalchemy.engine.Engine - INFO - SELECT likes.user_id AS likes_user_id, likes.id AS likes_id, likes.article_id AS likes_article_id, likes.created_at AS likes_created_at 
+FROM likes 
+WHERE likes.user_id IN (?)
+2026-07-04 15:49:42,109 - sqlalchemy.engine.Engine - INFO - [cached since 53.34s ago] (1,)
+2026-07-04 15:49:42,115 - sqlalchemy.engine.Engine - INFO - UPDATE users SET avatar_url=?, updated_at=CURRENT_TIMESTAMP WHERE users.id = ?
+2026-07-04 15:49:42,115 - sqlalchemy.engine.Engine - INFO - [cached since 51.16s ago] ('/uploads/avatar/a5e4cd66a7ce454db11497490c70af80.png', 1)
+2026-07-04 15:49:42,118 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.username, users.email, users.hashed_password, users.avatar_url, users.role, users.bio, users.is_active, users.created_at, users.updated_at 
+FROM users 
+WHERE users.id = ?
+2026-07-04 15:49:42,119 - sqlalchemy.engine.Engine - INFO - [cached since 51.16s ago] (1,)
+2026-07-04 15:49:42,121 - sqlalchemy.engine.Engine - INFO - SELECT comments.id AS comments_id, comments.content AS comments_content, comments.article_id AS comments_article_id, comments.user_id AS comments_user_id, comments.parent_id AS comments_parent_id, comments.is_approved AS comments_is_approved, comments.nickname AS comments_nickname, comments.created_at AS comments_created_at 
+FROM comments 
+WHERE ? = comments.user_id
+2026-07-04 15:49:42,121 - sqlalchemy.engine.Engine - INFO - [cached since 51.16s ago] (1,)
+2026-07-04 15:49:42,123 - sqlalchemy.engine.Engine - INFO - SELECT articles.id AS articles_id, articles.title AS articles_title, articles.content AS articles_content, articles.summary AS articles_summary, articles.cover_image AS articles_cover_image, articles.view_count AS articles_view_count, articles.like_count AS articles_like_count, articles.status AS articles_status, articles.is_private AS articles_is_private, articles.author_id AS articles_author_id, articles.category_id AS articles_category_id, articles.published_at AS articles_published_at, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at 
+FROM articles 
+WHERE ? = articles.author_id
+2026-07-04 15:49:42,124 - sqlalchemy.engine.Engine - INFO - [cached since 51.16s ago] (1,)
+2026-07-04 15:49:42,126 - sqlalchemy.engine.Engine - INFO - SELECT likes.id AS likes_id, likes.user_id AS likes_user_id, likes.article_id AS likes_article_id, likes.created_at AS likes_created_at 
+FROM likes 
+WHERE ? = likes.user_id
+2026-07-04 15:49:42,126 - sqlalchemy.engine.Engine - INFO - [cached since 51.16s ago] (1,)
+2026-07-04 15:49:42,129 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-07-04 15:49:56,800 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-07-04 15:49:56,801 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-07-04 15:49:56,801 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:49:56,802 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("categories")
+2026-07-04 15:49:56,802 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:49:56,803 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("article_tags")
+2026-07-04 15:49:56,803 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:49:56,804 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("tags")
+2026-07-04 15:49:56,804 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:49:56,805 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("articles")
+2026-07-04 15:49:56,805 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:49:56,806 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("comments")
+2026-07-04 15:49:56,806 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:49:56,807 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("subscriptions")
+2026-07-04 15:49:56,807 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:49:56,808 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("likes")
+2026-07-04 15:49:56,808 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:49:56,809 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-07-04 15:49:58,075 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-07-04 15:49:58,075 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-07-04 15:49:58,076 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:49:58,077 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("categories")
+2026-07-04 15:49:58,077 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:49:58,078 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("article_tags")
+2026-07-04 15:49:58,078 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:49:58,079 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("tags")
+2026-07-04 15:49:58,079 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:49:58,080 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("articles")
+2026-07-04 15:49:58,080 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:49:58,081 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("comments")
+2026-07-04 15:49:58,081 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:49:58,082 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("subscriptions")
+2026-07-04 15:49:58,082 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:49:58,083 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("likes")
+2026-07-04 15:49:58,083 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:49:58,084 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-07-04 15:51:10,472 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-07-04 15:51:10,473 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-07-04 15:51:10,473 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:51:10,474 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("categories")
+2026-07-04 15:51:10,474 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:51:10,475 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("article_tags")
+2026-07-04 15:51:10,476 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:51:10,476 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("tags")
+2026-07-04 15:51:10,477 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:51:10,477 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("articles")
+2026-07-04 15:51:10,478 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:51:10,478 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("comments")
+2026-07-04 15:51:10,479 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:51:10,479 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("subscriptions")
+2026-07-04 15:51:10,480 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:51:10,480 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("likes")
+2026-07-04 15:51:10,481 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-07-04 15:51:10,482 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-07-04 15:51:18,086 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-07-04 15:51:18,176 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.username, users.email, users.hashed_password, users.avatar_url, users.role, users.bio, users.is_active, users.created_at, users.updated_at 
+FROM users 
+WHERE users.id = ?
+2026-07-04 15:51:18,177 - sqlalchemy.engine.Engine - INFO - [generated in 0.00090s] (1,)
+2026-07-04 15:51:18,183 - sqlalchemy.engine.Engine - INFO - SELECT comments.user_id AS comments_user_id, comments.id AS comments_id, comments.content AS comments_content, comments.article_id AS comments_article_id, comments.parent_id AS comments_parent_id, comments.is_approved AS comments_is_approved, comments.nickname AS comments_nickname, comments.created_at AS comments_created_at 
+FROM comments 
+WHERE comments.user_id IN (?)
+2026-07-04 15:51:18,183 - sqlalchemy.engine.Engine - INFO - [generated in 0.00077s] (1,)
+2026-07-04 15:51:18,188 - sqlalchemy.engine.Engine - INFO - SELECT articles.author_id AS articles_author_id, articles.id AS articles_id, articles.title AS articles_title, articles.content AS articles_content, articles.summary AS articles_summary, articles.cover_image AS articles_cover_image, articles.view_count AS articles_view_count, articles.like_count AS articles_like_count, articles.status AS articles_status, articles.is_private AS articles_is_private, articles.category_id AS articles_category_id, articles.published_at AS articles_published_at, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at 
+FROM articles 
+WHERE articles.author_id IN (?)
+2026-07-04 15:51:18,189 - sqlalchemy.engine.Engine - INFO - [generated in 0.00087s] (1,)
+2026-07-04 15:51:18,193 - sqlalchemy.engine.Engine - INFO - SELECT likes.user_id AS likes_user_id, likes.id AS likes_id, likes.article_id AS likes_article_id, likes.created_at AS likes_created_at 
+FROM likes 
+WHERE likes.user_id IN (?)
+2026-07-04 15:51:18,193 - sqlalchemy.engine.Engine - INFO - [generated in 0.00061s] (1,)
+2026-07-04 15:51:18,197 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.username, users.email, users.hashed_password, users.avatar_url, users.role, users.bio, users.is_active, users.created_at, users.updated_at 
+FROM users 
+WHERE users.id = ?
+2026-07-04 15:51:18,197 - sqlalchemy.engine.Engine - INFO - [cached since 0.02086s ago] (1,)
+2026-07-04 15:51:18,199 - sqlalchemy.engine.Engine - INFO - SELECT comments.user_id AS comments_user_id, comments.id AS comments_id, comments.content AS comments_content, comments.article_id AS comments_article_id, comments.parent_id AS comments_parent_id, comments.is_approved AS comments_is_approved, comments.nickname AS comments_nickname, comments.created_at AS comments_created_at 
+FROM comments 
+WHERE comments.user_id IN (?)
+2026-07-04 15:51:18,199 - sqlalchemy.engine.Engine - INFO - [cached since 0.01668s ago] (1,)
+2026-07-04 15:51:18,201 - sqlalchemy.engine.Engine - INFO - SELECT articles.author_id AS articles_author_id, articles.id AS articles_id, articles.title AS articles_title, articles.content AS articles_content, articles.summary AS articles_summary, articles.cover_image AS articles_cover_image, articles.view_count AS articles_view_count, articles.like_count AS articles_like_count, articles.status AS articles_status, articles.is_private AS articles_is_private, articles.category_id AS articles_category_id, articles.published_at AS articles_published_at, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at 
+FROM articles 
+WHERE articles.author_id IN (?)
+2026-07-04 15:51:18,202 - sqlalchemy.engine.Engine - INFO - [cached since 0.01404s ago] (1,)
+2026-07-04 15:51:18,204 - sqlalchemy.engine.Engine - INFO - SELECT likes.user_id AS likes_user_id, likes.id AS likes_id, likes.article_id AS likes_article_id, likes.created_at AS likes_created_at 
+FROM likes 
+WHERE likes.user_id IN (?)
+2026-07-04 15:51:18,204 - sqlalchemy.engine.Engine - INFO - [cached since 0.01157s ago] (1,)
+2026-07-04 15:51:18,211 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-07-04 15:51:23,968 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-07-04 15:51:23,969 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.username, users.email, users.hashed_password, users.avatar_url, users.role, users.bio, users.is_active, users.created_at, users.updated_at 
+FROM users 
+WHERE users.id = ?
+2026-07-04 15:51:23,969 - sqlalchemy.engine.Engine - INFO - [cached since 5.793s ago] (1,)
+2026-07-04 15:51:23,972 - sqlalchemy.engine.Engine - INFO - SELECT comments.user_id AS comments_user_id, comments.id AS comments_id, comments.content AS comments_content, comments.article_id AS comments_article_id, comments.parent_id AS comments_parent_id, comments.is_approved AS comments_is_approved, comments.nickname AS comments_nickname, comments.created_at AS comments_created_at 
+FROM comments 
+WHERE comments.user_id IN (?)
+2026-07-04 15:51:23,972 - sqlalchemy.engine.Engine - INFO - [cached since 5.79s ago] (1,)
+2026-07-04 15:51:23,974 - sqlalchemy.engine.Engine - INFO - SELECT articles.author_id AS articles_author_id, articles.id AS articles_id, articles.title AS articles_title, articles.content AS articles_content, articles.summary AS articles_summary, articles.cover_image AS articles_cover_image, articles.view_count AS articles_view_count, articles.like_count AS articles_like_count, articles.status AS articles_status, articles.is_private AS articles_is_private, articles.category_id AS articles_category_id, articles.published_at AS articles_published_at, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at 
+FROM articles 
+WHERE articles.author_id IN (?)
+2026-07-04 15:51:23,974 - sqlalchemy.engine.Engine - INFO - [cached since 5.787s ago] (1,)
+2026-07-04 15:51:23,977 - sqlalchemy.engine.Engine - INFO - SELECT likes.user_id AS likes_user_id, likes.id AS likes_id, likes.article_id AS likes_article_id, likes.created_at AS likes_created_at 
+FROM likes 
+WHERE likes.user_id IN (?)
+2026-07-04 15:51:23,977 - sqlalchemy.engine.Engine - INFO - [cached since 5.784s ago] (1,)
+2026-07-04 15:51:23,985 - sqlalchemy.engine.Engine - INFO - UPDATE users SET avatar_url=?, updated_at=CURRENT_TIMESTAMP WHERE users.id = ?
+2026-07-04 15:51:23,985 - sqlalchemy.engine.Engine - INFO - [generated in 0.00039s] ('/uploads/avatar/7e8a706635ff4dc38b4585a563b1541a.png', 1)
+2026-07-04 15:51:23,988 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.username, users.email, users.hashed_password, users.avatar_url, users.role, users.bio, users.is_active, users.created_at, users.updated_at 
+FROM users 
+WHERE users.id = ?
+2026-07-04 15:51:23,989 - sqlalchemy.engine.Engine - INFO - [generated in 0.00042s] (1,)
+2026-07-04 15:51:23,992 - sqlalchemy.engine.Engine - INFO - SELECT comments.id AS comments_id, comments.content AS comments_content, comments.article_id AS comments_article_id, comments.user_id AS comments_user_id, comments.parent_id AS comments_parent_id, comments.is_approved AS comments_is_approved, comments.nickname AS comments_nickname, comments.created_at AS comments_created_at 
+FROM comments 
+WHERE ? = comments.user_id
+2026-07-04 15:51:23,992 - sqlalchemy.engine.Engine - INFO - [generated in 0.00044s] (1,)
+2026-07-04 15:51:23,996 - sqlalchemy.engine.Engine - INFO - SELECT articles.id AS articles_id, articles.title AS articles_title, articles.content AS articles_content, articles.summary AS articles_summary, articles.cover_image AS articles_cover_image, articles.view_count AS articles_view_count, articles.like_count AS articles_like_count, articles.status AS articles_status, articles.is_private AS articles_is_private, articles.author_id AS articles_author_id, articles.category_id AS articles_category_id, articles.published_at AS articles_published_at, articles.created_at AS articles_created_at, articles.updated_at AS articles_updated_at 
+FROM articles 
+WHERE ? = articles.author_id
+2026-07-04 15:51:23,996 - sqlalchemy.engine.Engine - INFO - [generated in 0.00048s] (1,)
+2026-07-04 15:51:23,999 - sqlalchemy.engine.Engine - INFO - SELECT likes.id AS likes_id, likes.user_id AS likes_user_id, likes.article_id AS likes_article_id, likes.created_at AS likes_created_at 
+FROM likes 
+WHERE ? = likes.user_id
+2026-07-04 15:51:23,999 - sqlalchemy.engine.Engine - INFO - [generated in 0.00034s] (1,)
+2026-07-04 15:51:24,001 - sqlalchemy.engine.Engine - INFO - COMMIT

@@ -1,8 +1,13 @@
+from typing import Optional
 from datetime import datetime, timedelta, timezone
 from jose import jwt, JWTError
 import bcrypt
+from fastapi import WebSocket
+import logging
 
 from app.config import settings
+
+logger = logging.getLogger(__name__)
 
 # 加密
 def hash_password(password: str) -> str:
@@ -36,5 +41,47 @@ def create_refresh_token(user_id: int) -> str:
 def decode_token(token: str) -> dict:
     """Verify a JWT access token and return the payload."""
     return jwt.decode(token, settings.secret_key, algorithms=settings.ALGORITHM)
+
+# ws token
+def _extract_token(websocket: WebSocket) -> str | None:
+    # 确保从 query_params 中提取
+    if hasattr(websocket, "query_params"):
+        return websocket.query_params.get("token")
+    
+    # 备用：从 scope 中解析
+    query_string = websocket.scope.get("query_string", b"").decode()
+    if query_string:
+        params = dict(q.split("=") for q in query_string.split("&") if "=" in q)
+        return params.get("token")
+    return None
+
+# ws token auth
+
+
+def _authenticate(token: str) -> int | None:
+    try:
+        logger.debug(f"Decoding token: {token[:20]}...")
+        payload = jwt.decode(token, settings.secret_key, algorithms=[settings.ALGORITHM])
+        logger.debug(f"Token payload: {payload}")
+        
+        user_id = payload.get("sub")
+        if user_id is None:
+            logger.warning("Token missing 'sub' field")
+            return None
+        
+        # 检查 token 类型（如果是 access token）
+        if payload.get("type") != "access":
+            logger.warning(f"Invalid token type: {payload.get('type')}")
+            return None
+        
+        return int(user_id)
+        
+    except JWTError as e:
+        logger.error(f"JWT decode error: {e}")
+        return None
+        
+    except Exception as e:
+        logger.error(f"Unexpected error: {e}", exc_info=True)
+        return None
     
 

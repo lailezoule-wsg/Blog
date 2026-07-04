@@ -1,7 +1,7 @@
 from fastapi import HTTPException,status,Depends
 from sqlalchemy import select,update,delete,or_,func
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy.orm import selectinload
+from sqlalchemy.orm import selectinload,joinedload
 
 from app.schemas.article import ArticleCreate,ArticleQuery,ArticleUpdate,ArticleTagAdd
 from app.schemas.comment import CommentCreate
@@ -19,17 +19,25 @@ from app.models.comment import Comment
 from app.services.tag import TagService
 from app.services.category import CategoryService
 
+from app.utils.logging import get_logger
+
+logger = get_logger(__name__)
+
 class ArticleService:
     def __init__(self,db:AsyncSession):
         self.db = db
         self.tagService = TagService(db)
         self.categoryService = CategoryService(db)
 
-    async def get_by_id(self,article_id:int,tag_flag:bool=False):
+    async def get_by_id(self,article_id:int,tag_flag:bool=False,author_flag:bool=False):
         query = select(Article).where(Article.id == article_id)
         if tag_flag:
             query = query.options(
                 selectinload(Article.tags)
+            )
+        if author_flag:
+            query = query.options(
+                selectinload(Article.author)
             )
         result = await self.db.execute(
             query
@@ -162,11 +170,34 @@ class ArticleService:
             )
         )
         result = await self.db.execute(query)
-        
-        return result.scalar_one_or_none()
+        await self._increment_view_count(article_id)
+
+        article = result.scalar_one_or_none()
+        await self.db.refresh(article)
+        return article
+    
+    async def _increment_view_count(self, article_id: int) -> None:
+        """增加文章浏览量（使用 UPDATE 语句，避免并发问题）"""
+        try:
+            # ✅ 使用 UPDATE 语句直接在数据库层面递增
+            await self.db.execute(
+                update(Article)
+                .where(Article.id == article_id)
+                .values(view_count=Article.view_count + 1)
+            )
+            await self.db.flush()  # 立即刷新到数据库
+        except Exception as e:
+            # 浏览量更新失败不应影响主流程，记录日志即可
+            logger.warning(f"Failed to increment view count for article {article_id}: {e}")
         
     async def update_article(self,user:User,article_id:int,data:ArticleUpdate):
         article = await self.get_by_id(article_id)
+        if article.author_id != user.id:
+            raise HTTPException(
+                status.HTTP_403_FORBIDDEN,
+                "无权更新他人文章"
+            )
+
         if data.title:
             article.title = data.title
         if data.content:
@@ -188,13 +219,23 @@ class ArticleService:
         result = await self.db.execute(query)
         return result.scalar_one_or_none()
     
-    async def delete_article(self,article_id:int):  
+    async def delete_article(self,user:User,article_id:int):  
         article = await self.get_by_id(article_id)
+        if article.author_id != user.id and user.role != "admin":
+            raise HTTPException(
+                status.HTTP_403_FORBIDDEN,
+                "无权删除他人文章"
+            )
         await self.db.delete(article)
         return True
     
-    async def publish_article(self,article_id:int):
-        article = await self.get_by_id(article_id)
+    async def publish_article(self,user:User,article_id:int):
+        article = await self.get_by_id(article_id,author_flag=True)
+        if article.author_id != user.id:
+            raise HTTPException(
+                status.HTTP_403_FORBIDDEN,
+                "无权发布他人文章"
+            )
         article.status = ArticleStatus.PUBLISHED
         article.published_at = func.now()
         await self.db.flush()
@@ -241,10 +282,11 @@ class ArticleService:
         to_add = set()
         to_remove = set()
         stored_tag_ids = set()
+        tag_ids = set(data.tag_ids)
         if article.tags:
             stored_tag_ids = {int(tag.id) for tag in article.tags}
-        to_add = data.tag_ids - stored_tag_ids
-        to_remove = stored_tag_ids - data.tag_ids
+        to_add = tag_ids - stored_tag_ids
+        to_remove = stored_tag_ids - tag_ids
         
         if to_add:
             tags_list = await self.tagService.get_by_ids(to_add)
@@ -263,8 +305,39 @@ class ArticleService:
         await self.db.refresh(article)
         return article.tags
     
+    async def delete_tags(self,article_id:int,tag_id:int):
+        article = await self.get_by_id(article_id,tag_flag=True)
+        to_remove = set()
+        to_remove.add(tag_id)
+        stored_tag_ids = set()
+        if article.tags is None:
+            raise HTTPException(
+                status.HTTP_403_FORBIDDEN,
+                "当前文章无任何标签，无法移除！"
+            )
+        stored_tag_ids = {int(tag.id) for tag in article.tags}
+        to_remove = to_remove - stored_tag_ids
+
+        if to_remove is None:
+            raise HTTPException(
+                status.HTTP_403_FORBIDDEN,
+                "当前标签不属于该文章，无需移除！"
+            )
+        # 直接操作中间表删除（更高效）
+        stmt = delete(article_tags).where(
+            article_tags.c.article_id == article_id,
+            article_tags.c.tag_id.in_(to_remove)
+        )
+        await self.db.execute(stmt)
+
+        # 5. 提交事务
+        await self.db.commit()
+        await self.db.refresh(article)
+        return True
+    
     async def add_comments(self,user:User|None,article_id:int,data:CommentCreate):
-        await self.get_by_id(article_id,tag_flag=True)
+        article = await self.get_by_id(article_id,tag_flag=True)
+
         comment = Comment(
             content=data.content,
             parent_id=data.parent_id,
@@ -281,15 +354,28 @@ class ArticleService:
         await self.db.commit()
         # ✅ 关键修复：只刷新评论对象本身
         await self.db.refresh(comment)
-        return comment
+        return article.author_id,comment
     
-    async def list_comments(self,article_id:int,paginateParams:PaginateParams):
-        await self.get_by_id(article_id)
+    async def list_comments(self,user:User | None,article_id:int,paginateParams:PaginateParams):
+        article = await self.get_by_id(article_id)
         size = paginateParams.size
         offset = paginateParams.offset
 
         query = select(Comment).where(Comment.article_id == article_id)
         total_query = select(func.count(Comment.id)).where(Comment.article_id == article_id)
+
+        if user:
+            if article.author_id == user.id or user.role == "admin":
+                query = query
+            else:
+                query = query.where(
+                or_(
+                    Comment.user_id == user.id,
+                    Comment.is_approved == True
+                )
+            )
+        else:
+            query = query.where(Comment.is_approved == True)
 
         query = query.options(
             selectinload(Comment.replies)
@@ -309,7 +395,7 @@ class ArticleService:
             select(Comment).where(
                 Comment.id == comment_id,
                 Comment.article_id == article_id
-            )
+            ).options(joinedload(Comment.article).load_only(Article.author_id))
         )
         if user_id:
             query = query.where(Comment.user_id == user_id)
@@ -341,7 +427,7 @@ class ArticleService:
     async def delete_comments(self,user:User,article_id:int,comment_id:int):
         await self.get_by_id(article_id)
         comment = await self.get_comment_by_id(article_id,comment_id)
-        if comment.user_id != user.id:
+        if comment.user_id != user.id and user.role != "admin":
             raise HTTPException(
                 status.HTTP_403_FORBIDDEN,
                 "无权删除他人评论"
@@ -351,11 +437,11 @@ class ArticleService:
     
 
     async def approve_comments(self,user:User,article_id:int,comment_id:int):
-        comment = await self.get_comment_by_id(article_id,comment_id,user.id)
-        if comment.user_id != user.id and user.role != "admin":
+        comment = await self.get_comment_by_id(article_id,comment_id)
+        if comment.article.author_id != user.id and user.role != "admin":
             raise HTTPException(
                 status.HTTP_403_FORBIDDEN,
-                "无权审批他人评论"
+                "无权审批评论"
             )
         comment.is_approved = True
         await self.db.flush()

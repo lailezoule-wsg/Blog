@@ -6,6 +6,7 @@ from app.models.user import CreateTimeBase,Base
 
 if TYPE_CHECKING:
     from app.models.user import User
+    from app.models.article import Article
 
 class Comment(CreateTimeBase,Base):
     __tablename__ = "comments"
@@ -20,6 +21,12 @@ class Comment(CreateTimeBase,Base):
 
     user : Mapped["User"] = relationship(
         "User",
+        back_populates="comments",
+        lazy="selectin"
+    )
+
+    article : Mapped["Article"] = relationship(
+        "Article",
         back_populates="comments",
         lazy="selectin"
     )

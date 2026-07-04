@@ -14,6 +14,15 @@ class Settings(BaseSettings):
     secret_key: str = "your-secret-key"
     ALGORITHM: str = "HS256"
 
+    # websocket
+    WS_HEARTBEAT_INTERVAL: int = 30
+    WS_HEARTBEAT_TIMEOUT: int = 10
+
+    # 日志配置
+    LOG_LEVEL: str = "INFO"
+    LOG_DIR: Path = Path("./logs")
+    LOG_USE_JSON: bool = False
+
     # Token expiration settings
     access_token_expire_minutes: int = 30
     refresh_token_expire_minutes: int = 60 * 24 * 7  # 7 days
@@ -24,6 +33,7 @@ class Settings(BaseSettings):
     # 头像限制
     avatar_allowed_extensions: set = {".jpg", ".jpeg", ".png", ".gif"}
     avatar_max_file_size : int = 2 * 1024 * 1024  # 2MB
+    avatar_name:str = "avatar"
     avatar_dir: str = "uploads/avatar"
 
     def ensure_all_dirs(self):

@@ -14,6 +14,6 @@ engine = create_async_engine(
     max_overflow=40,       # 最大溢出连接数
     pool_pre_ping=True,    # 连接前检查是否有效
     pool_recycle=3600,     # 连接回收时间（秒）
-    echo=True             # 生产环境关闭 SQL 日志
+    echo=False             # 生产环境关闭 SQL 日志
 )
 async_session = async_sessionmaker(engine, class_=AsyncSession, expire_on_commit=False)

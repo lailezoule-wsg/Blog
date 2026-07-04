@@ -21,7 +21,7 @@ class LocalTags(BaseModel):
     model_config = ConfigDict(from_attributes=True)
 
 class ArticleTagAdd(BaseModel):
-    tag_ids:set[int] = Field(default_factory=set)
+    tag_ids:list[int] = Field(default_factory=list)
 
 class ArticleCreate(BaseModel):
     title: str = Field(..., max_length=200, description="文章标题")

@@ -18,7 +18,7 @@ from app.services.subscription import SubscriptionService
 
 DBSession = Annotated[AsyncSession,Depends(get_db)]
 
-router = APIRouter(prefix="/api/subscribtions",tags=["订阅"])
+router = APIRouter(prefix="/api/subscriptions",tags=["订阅"])
 
 @router.get("/",response_model=PaginageResponse[SubscriptionResponse])
 async def list_sub(

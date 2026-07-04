@@ -5,6 +5,9 @@ from pathlib import Path
 from fastapi import UploadFile
 from app.utils.file_exceptions import *
 from app.config import settings
+from app.utils.logging import get_logger
+
+logger = get_logger(__name__)
 
 class FileUploadService:
     """文件上传服务"""
@@ -72,10 +75,20 @@ class FileUploadService:
                     shutil.copyfileobj(file.file, f)
             except OSError as e:
                 if "No space left on device" in str(e):
+                    logger.error(f"No space left on device:{str(e)}")
                     raise StorageFullError()
                 filename = file.filename or "unknown"
                 raise FileReadError(filename) from e
             
+            t = {
+                "filename": filename,
+                "original_name": file.filename,
+                "path": str(file_path),
+                "size": file_path.stat().st_size,
+                "content_type": file.content_type,
+                "url": f"/{settings.upload_dir}/{subdir}/{filename}" if subdir else f"/uploads/{filename}"
+            }
+            logger.info("fileinfofileinfofileinfofileinfofileinfo:",t)
             return {
                 "filename": filename,
                 "original_name": file.filename,
@@ -88,4 +101,38 @@ class FileUploadService:
         except HTTPException:
             raise
         except Exception as e:
+            logger.error(f"文件保存失败: {str(e)}")
             raise FileUploadException(f"文件保存失败: {str(e)}")
+        
+    async def delete_file(self, subdir: str, filename: str) -> bool:
+        """
+        删除文件
+        
+        Returns:
+            bool: True 表示删除成功，False 表示文件不存在
+        """
+        file_path = self.upload_dir / subdir / filename
+
+        if not file_path.exists():
+            return False
+        try:
+            file_path.unlink()
+            # 可选：删除空目录
+            parent_dir = file_path.parent
+            if not any(parent_dir.iterdir()):
+                parent_dir.rmdir()
+            return True
+        except Exception as e:
+            logger.error(f"Failed to delete file: {str(e)}")
+            return False
+
+    async def delete_files(self, subdir: str, filenames: list[str]) -> dict:
+        """批量删除文件"""
+        results = {"success": [], "failed": []}
+        for filename in filenames:
+            try:
+                await self.delete_file(subdir, filename)
+                results["success"].append(filename)
+            except Exception as e:
+                results["failed"].append({"filename": filename, "error": str(e)})
+        return results

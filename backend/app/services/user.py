@@ -77,7 +77,8 @@ class UserService:
     async def update_me(self,user:User,data:UserUpdate):
         user.bio = data.bio
         user.email = data.email
-        user.hashed_password = hash_password(data.password)
+        if data.password:
+            user.hashed_password = hash_password(data.password)
         await self.db.flush()
         await self.db.refresh(user)
         return user

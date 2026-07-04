@@ -11,6 +11,7 @@ if TYPE_CHECKING:
     from app.models.like import Like
     from app.models.category import Category
     from app.models.user import User
+    from app.models.comment import Comment
 
 
 class Article(DateTimeBase,Base):
@@ -43,6 +44,12 @@ class Article(DateTimeBase,Base):
         "Tag",
         secondary="article_tags",
         back_populates="articles",
+        lazy="selectin"
+    )
+
+    comments : Mapped[list["Comment"]] = relationship(
+        "Comment",
+        back_populates="article",
         lazy="selectin"
     )
 

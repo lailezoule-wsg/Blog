@@ -18,6 +18,7 @@ from app.utils.depends import get_db,get_current_user,get_current_user_optional
 from app.models.user import User
 
 from app.services.article import ArticleService
+from app.services.ws import WSService
 
 
 router = APIRouter(prefix="/api/articles",tags=["文章"])
@@ -88,7 +89,7 @@ async def delete_article(
     db:DBSession
 ):
     service = ArticleService(db)
-    await service.delete_article(article_id)
+    await service.delete_article(current_user,article_id)
     return ResponseModel(data="删除成功")
 
 @router.post("/{article_id}/publish",response_model=ResponseModel[ArticlePublishResponse])
@@ -98,7 +99,10 @@ async def publish_article(
     db:DBSession
 ):
     service = ArticleService(db)
-    publish = await service.publish_article(article_id)
+    publish = await service.publish_article(current_user,article_id)
+    # websocket通知
+    wsService = WSService()
+    await wsService.notify_new_article(article_id,publish.title,publish.author.username)
     return ResponseModel(data=ArticlePublishResponse.model_validate(publish))
 
 @router.post("/{article_id}/like",response_model=ResponseModel[ArticleLikeResponse])
@@ -109,7 +113,6 @@ async def like_article(
 ):
     service = ArticleService(db)
     liked,like_count = await service.like_article(current_user,article_id)
-
     message = "点赞成功" if liked else "取消成功"
     return ResponseModel(
         message=message,
@@ -128,14 +131,26 @@ async def add_tags(
     items = [TagResponse.model_validate(tag) for tag in tags]
     return ResponseModel(data={"tags":items})
 
+@router.post("/{article_id}/tags/{tag_id}",response_model=ResponseModel)
+async def delete_tags(
+    article_id:Annotated[int,Path(...,gt=0)],
+    tag_id:Annotated[int,Path(...,gt=0)],
+    current_user:CurrentUser,
+    db:DBSession
+):
+    service = ArticleService(db)
+    await service.delete_tags(article_id,tag_id)
+    return ResponseModel(data="标签已移除")
+
 @router.get("/{article_id}/comments",response_model=PaginageResponse[CommentResponse])
 async def list_comments(
     article_id:Annotated[int,Path(...,gt=0)],
     paginateParams:Annotated[PaginateParams,Depends()],
+    current_user: Annotated[Optional[User], Depends(get_current_user_optional)],
     db:DBSession
 ):
     service = ArticleService(db)
-    total,comments = await service.list_comments(article_id,paginateParams)
+    total,comments = await service.list_comments(current_user,article_id,paginateParams)
     items = [CommentResponse.model_validate(comment) for comment in comments]
     paginateData = PaginateData(
         page=paginateParams.page,
@@ -155,8 +170,16 @@ async def add_comments(
     service = ArticleService(db)
     if current_user is None and data.nickname is None:
         raise HTTPException(status.HTTP_400_BAD_REQUEST,"用户未登录或者匿名名称为空")
-    comments = await service.add_comments(current_user,article_id,data)
-    return ResponseModel(data=CommentResponse.model_validate(comments))
+    author_id,comment = await service.add_comments(current_user,article_id,data)
+    # websocket通知
+    wsService = WSService()
+    if current_user:
+        commenter = current_user.username
+    else:
+        commenter = data.nickname if data.nickname else ""
+    await wsService.notify_new_comment(article_id,comment.id,commenter,data.content,author_id)
+
+    return ResponseModel(data=CommentResponse.model_validate(comment))
 
 @router.put("/{article_id}/comments/{comment_id}",response_model=ResponseModel[CommentCreateResponse])
 async def update_comments(
