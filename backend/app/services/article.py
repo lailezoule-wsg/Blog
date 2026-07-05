@@ -135,7 +135,7 @@ class ArticleService:
         try:
             file_info = await fileService.img_save(
                 file=file,
-                subdir=settings.article_pic_name
+                subdir=settings.ARTICLE_PIC_NAME
             )
             cover_image = file_info["url"]
         except HTTPException as e:
@@ -219,7 +219,7 @@ class ArticleService:
                 file=file,
                 old_pic=old_pic,
                 del_flag=True,
-                subdir=settings.article_pic_name
+                subdir=settings.ARTICLE_PIC_NAME
             )
             cover_image = file_info["url"]
         except HTTPException as e:

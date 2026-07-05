@@ -9,7 +9,7 @@ from app.config import settings
 3：创建会话 (使用时)
 """
 engine = create_async_engine(
-    settings.database_url, 
+    settings.DATABASE_URL, 
     pool_size=20,          # 连接池大小
     max_overflow=40,       # 最大溢出连接数
     pool_pre_ping=True,    # 连接前检查是否有效

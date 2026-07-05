@@ -24,23 +24,23 @@ def verify_password(input_password: str, stored_password: str) -> bool:
 # 生成JWT
 def create_access_token(user_id: int) -> str:
     """Create a JWT access token."""
-    expire = datetime.now(timezone.utc) + timedelta(minutes=settings.access_token_expire_minutes)
+    expire = datetime.now(timezone.utc) + timedelta(minutes=settings.ACCESS_TOKEN_EXPIRE_MINUTES)
     to_encode = {"sub": str(user_id), "exp": expire, "type": "access"}
-    encoded_jwt = jwt.encode(to_encode, settings.secret_key, algorithm=settings.ALGORITHM)
+    encoded_jwt = jwt.encode(to_encode, settings.SECRET_KEY, algorithm=settings.ALGORITHM)
     return encoded_jwt
 
 # 生成刷新JWT
 def create_refresh_token(user_id: int) -> str:
     """Create a JWT refresh token."""
-    expire = datetime.now(timezone.utc) + timedelta(minutes=settings.refresh_token_expire_minutes)
+    expire = datetime.now(timezone.utc) + timedelta(minutes=settings.REFRESH_TOKEN_EXPIRE_DAYS * 24 * 60)
     to_encode = {"sub": str(user_id), "exp": expire, "type": "refresh"}
-    encoded_jwt = jwt.encode(to_encode, settings.secret_key, algorithm=settings.ALGORITHM)
+    encoded_jwt = jwt.encode(to_encode, settings.SECRET_KEY, algorithm=settings.ALGORITHM)
     return encoded_jwt
 
 # 解析JWT
 def decode_token(token: str) -> dict:
     """Verify a JWT access token and return the payload."""
-    return jwt.decode(token, settings.secret_key, algorithms=settings.ALGORITHM)
+    return jwt.decode(token, settings.SECRET_KEY, algorithms=settings.ALGORITHM)
 
 # ws token
 def _extract_token(websocket: WebSocket) -> str | None:
@@ -61,7 +61,7 @@ def _extract_token(websocket: WebSocket) -> str | None:
 def _authenticate(token: str) -> int | None:
     try:
         logger.debug(f"Decoding token: {token[:20]}...")
-        payload = jwt.decode(token, settings.secret_key, algorithms=[settings.ALGORITHM])
+        payload = jwt.decode(token, settings.SECRET_KEY, algorithms=[settings.ALGORITHM])
         logger.debug(f"Token payload: {payload}")
         
         user_id = payload.get("sub")

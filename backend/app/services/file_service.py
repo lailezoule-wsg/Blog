@@ -14,15 +14,15 @@ class FileUploadService:
     """文件上传服务"""
     
     def __init__(self):
-        self.upload_dir = Path(settings.upload_dir)
-        self.upload_dir.mkdir(parents=True, exist_ok=True)
+        self.UPLOAD_DIR = Path(settings.UPLOAD_DIR)
+        self.UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
     
     # 图片
-    async def img_save(self,file:UploadFile,old_pic:str|None=None,del_flag:bool=False,subdir:str=settings.avatar_name) -> dict:
+    async def img_save(self,file:UploadFile,old_pic:str|None=None,del_flag:bool=False,subdir:str=settings.AVATAR_NAME) -> dict:
         await self.validate_file(
             file,
-            max_size=settings.avatar_max_file_size,
-            allowed_extensions=settings.avatar_allowed_extensions
+            max_size=settings.AVATAR_MAX_FILE_SIZE,
+            allowed_extensions=settings.AVATAR_ALLOWED_EXTENSIONS
         )
         
         # ✅ 保存文件（如果失败会自动抛出异常）
@@ -81,7 +81,7 @@ class FileUploadService:
         """保存文件"""
         try:
             # 创建保存目录
-            save_dir = self.upload_dir / subdir
+            save_dir = self.UPLOAD_DIR / subdir
             save_dir.mkdir(parents=True, exist_ok=True)
             
             # 生成文件名
@@ -109,7 +109,7 @@ class FileUploadService:
                 "path": str(file_path),
                 "size": file_path.stat().st_size,
                 "content_type": file.content_type,
-                "url": f"/{settings.upload_dir}/{subdir}/{filename}" if subdir else f"/uploads/{filename}"
+                "url": f"/{settings.UPLOAD_DIR}/{subdir}/{filename}" if subdir else f"/uploads/{filename}"
             }
             logger.info("fileinfofileinfofileinfofileinfofileinfo:",t)
             return {
@@ -118,7 +118,7 @@ class FileUploadService:
                 "path": str(file_path),
                 "size": file_path.stat().st_size,
                 "content_type": file.content_type,
-                "url": f"/{settings.upload_dir}/{subdir}/{filename}" if subdir else f"/uploads/{filename}"
+                "url": f"/{settings.UPLOAD_DIR}/{subdir}/{filename}" if subdir else f"/uploads/{filename}"
             }
             
         except HTTPException:
@@ -134,7 +134,7 @@ class FileUploadService:
         Returns:
             bool: True 表示删除成功，False 表示文件不存在
         """
-        file_path = self.upload_dir / subdir / filename
+        file_path = self.UPLOAD_DIR / subdir / filename
 
         if not file_path.exists():
             return False

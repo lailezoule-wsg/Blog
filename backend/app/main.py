@@ -1,4 +1,4 @@
-import time
+import logging
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
@@ -12,47 +12,56 @@ from app.utils.exceptions import setup_exception_handlers
 
 from app.routers import user,tag,subscription,category,article,ws
 
-# 文件创建
-settings.ensure_all_dirs()
+
 
 from app.utils.logging import setup_logging, get_logger
-import logging
 
-# 配置日志（在应用启动时调用一次）
-setup_logging(
-    level=logging.INFO,           # 日志级别
-    log_dir="./logs",             # 日志文件目录
-    use_json=False,               # 开发环境用文本，生产环境用 JSON
-    console=True,                 # 输出到控制台
-    file=True,                    # 输出到文件
-)
+from app.middles.request import RequestMiddleware
 
-# 获取根 Logger
-logger = get_logger("app")
-logger.info("Application starting...")
+
+
+
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     # Perform any startup tasks here
+    # 文件创建
+    settings.ensure_all_dirs()
+    # 配置日志（在应用启动时调用一次）
+    setup_logging(
+        level=logging.INFO,           # 日志级别
+        log_dir=settings.LOG_DIR,             # 日志文件目录
+        use_json=False,               # 开发环境用文本，生产环境用 JSON
+        console=True,                 # 输出到控制台
+        file=True,                    # 输出到文件
+    )
+    # 获取根 Logger 必须:app  否则异常
+    logger = get_logger("app")
+    logger.info("Application starting...")
     # 数据库创建
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
     yield
     # Perform any shutdown tasks here
+    # 关闭时的清理
+    logger.info("Application shutting down...")
 
 app = FastAPI(
-    title=settings.app_name,
-    description=settings.description,
-    version=settings.version,
+    title=settings.APP_NAME,
+    description=settings.DESCRIPTION,
+    VERSION=settings.VERSION,
     lifespan=lifespan
 )
-
+"""
+中间件的执行顺序（后添加的先执行）
+"""
+# 添加中间件
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["localhost", "http://localhost:5173", "http://localhost:8000"], 
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_origins=settings.ALLOWED_ORIGINS, 
+    allow_credentials=settings.ALLOWED_CREDENTIALS,
+    allow_methods=settings.ALLOWED_METHODS,
+    allow_headers=settings.ALLOWED_HEADERS,
 )
 
 # 注册全局异常处理函数
@@ -66,17 +75,7 @@ app.include_router(subscription.router)
 app.include_router(ws.router)
 
 # 添加http请求中间件
-@app.middleware("http")
-async def http_process_time(request, call_next):
-    start_time = time.time()
-    response = await call_next(request)
-    process_time = time.time() - start_time
-    logger.info(f"Request: {request.method} {request.url} completed in {process_time:.4f} seconds")
-    return response
-
-
-relative_avatar_path = settings.avatar_dir
-avatar_name = relative_avatar_path.split("/")[-1]
+app.add_middleware(RequestMiddleware)
 
 # ✅ 批量挂载
 for path, directory, name in settings.get_mount_configs():
