@@ -9,7 +9,33 @@
           <span class="views"><el-icon><View /></el-icon> {{ article.view_count }}</span>
           <span class="likes"><el-icon><Star /></el-icon> {{ article.like_count }}</span>
           <el-tag v-if="article.category" size="small">{{ article.category.name }}</el-tag>
-          <el-tag v-for="tag in article.tags" :key="tag.id" size="small" type="info">{{ tag.name }}</el-tag>
+          <el-tag
+            v-for="tag in article.tags"
+            :key="tag.id"
+            size="small"
+            type="info"
+            :closable="canEdit"
+            @close="handleRemoveTag(tag.id)"
+          >{{ tag.name }}</el-tag>
+          <el-popover
+            v-if="canEdit && availableTags.length > 0"
+            trigger="click"
+            placement="bottom"
+            :width="180"
+          >
+            <template #reference>
+              <el-button size="small" text type="info">+ 添加标签</el-button>
+            </template>
+            <el-select
+              v-model="selectedTagId"
+              placeholder="选择标签"
+              size="small"
+              @change="handleAddTag"
+              style="width: 100%"
+            >
+              <el-option v-for="tag in availableTags" :key="tag.id" :label="tag.name" :value="tag.id" />
+            </el-select>
+          </el-popover>
         </div>
         <div class="article-actions" v-if="canEdit">
           <el-button type="primary" @click="$router.push(`/article/edit/${article.id}`)">编辑</el-button>
@@ -115,7 +141,8 @@ import { useUserStore } from '../../stores/user'
 import { articleApi } from '../../api/article'
 import { API_BASE } from '../../api'
 import { commentApi } from '../../api/comment'
-import type { Article, Comment } from '../../types'
+import { tagApi } from '../../api/tag'
+import type { Article, Comment, Tag } from '../../types'
 
 const route = useRoute()
 const router = useRouter()
@@ -129,6 +156,9 @@ const liked = ref(false)
 const editingId = ref<number | null>(null)
 const editContent = ref('')
 const editLoading = ref(false)
+const allTags = ref<Tag[]>([])
+const selectedTagId = ref<number | undefined>(undefined)
+const tagLoading = ref(false)
 
 const articleId = computed(() => Number(route.params.id))
 
@@ -154,9 +184,50 @@ function canApproveComment() {
   return article.value?.author_id === userStore.user?.id
 }
 
+const availableTags = computed(() => {
+  if (!article.value) return []
+  const currentIds = new Set(article.value.tags.map(t => t.id))
+  return allTags.value.filter(t => !currentIds.has(t.id))
+})
+
+async function fetchTags() {
+  try {
+    const res = await tagApi.getList()
+    allTags.value = res.data.data.items
+  } catch {
+    // error handled by interceptor
+  }
+}
+
+async function handleAddTag() {
+  if (!selectedTagId.value) return
+  tagLoading.value = true
+  try {
+    const currentTagIds = article.value!.tags.map(t => t.id)
+    await articleApi.addTags(articleId.value, [...currentTagIds, selectedTagId.value])
+    selectedTagId.value = undefined
+    await fetchArticle()
+  } catch {
+    // error handled by interceptor
+  } finally {
+    tagLoading.value = false
+  }
+}
+
+async function handleRemoveTag(tagId: number) {
+  tagLoading.value = true
+  try {
+    await articleApi.removeTag(articleId.value, tagId)
+    await fetchArticle()
+  } catch {
+    // error handled by interceptor
+  } finally {
+    tagLoading.value = false
+  }
+}
+
 onMounted(async () => {
-  await fetchArticle()
-  await fetchComments()
+  await Promise.all([fetchArticle(), fetchComments(), fetchTags()])
 })
 
 async function fetchArticle() {

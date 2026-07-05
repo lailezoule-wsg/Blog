@@ -1,5 +1,5 @@
 from typing import Annotated,Optional
-from fastapi import APIRouter,Depends,HTTPException,status,Path,File,UploadFile,Form
+from fastapi import APIRouter,Depends,HTTPException,status,Path,File,UploadFile,Form,BackgroundTasks
 
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -18,8 +18,8 @@ from app.utils.depends import get_db,get_current_user,get_current_user_optional
 from app.models.user import User
 
 from app.services.article import ArticleService
-from app.services.ws import WSService
 from app.services.file_service import FileUploadService
+from app.task.notify import notify_new_article,notify_new_comment
 
 
 router = APIRouter(prefix="/api/articles",tags=["文章"])
@@ -80,8 +80,8 @@ async def update_article(
     article_id:Annotated[int,Path(...,gt=0)],
     current_user:CurrentUser,
     db:DBSession,
-    data:ArticleCreate = Depends(ArticleCreate.as_form),
-    file:UploadFile = File(...),
+    data:ArticleUpdate = Depends(ArticleUpdate.as_form),
+    file:Optional[UploadFile] = File(None),
     fileService: FileUploadService = Depends(FileUploadService),
 ):
     service = ArticleService(db)
@@ -102,13 +102,16 @@ async def delete_article(
 async def publish_article(
     article_id:Annotated[int,Path(...,gt=0)],
     current_user:CurrentUser,
-    db:DBSession
+    db:DBSession,
+    background_tasks:BackgroundTasks
 ):
     service = ArticleService(db)
     publish = await service.publish_article(current_user,article_id)
-    # websocket通知
-    wsService = WSService()
-    await wsService.notify_new_article(article_id,publish.title,publish.author.username)
+
+    # 异步通知
+    background_tasks.add_task(
+        notify_new_article,article_id,publish.title,publish.author.username
+    )
     return ResponseModel(data=ArticlePublishResponse.model_validate(publish))
 
 @router.post("/{article_id}/like",response_model=ResponseModel[ArticleLikeResponse])
@@ -137,7 +140,7 @@ async def add_tags(
     items = [TagResponse.model_validate(tag) for tag in tags]
     return ResponseModel(data={"tags":items})
 
-@router.post("/{article_id}/tags/{tag_id}",response_model=ResponseModel)
+@router.delete("/{article_id}/tags/{tag_id}",response_model=ResponseModel)
 async def delete_tags(
     article_id:Annotated[int,Path(...,gt=0)],
     tag_id:Annotated[int,Path(...,gt=0)],
@@ -171,19 +174,21 @@ async def add_comments(
     article_id:Annotated[int,Path(...,gt=0)],
     data:CommentCreate,
     current_user: Annotated[Optional[User], Depends(get_current_user_optional)],
-    db:DBSession
+    db:DBSession,
+    background_tasks:BackgroundTasks
 ):
     service = ArticleService(db)
     if current_user is None and data.nickname is None:
         raise HTTPException(status.HTTP_400_BAD_REQUEST,"用户未登录或者匿名名称为空")
     author_id,comment = await service.add_comments(current_user,article_id,data)
-    # websocket通知
-    wsService = WSService()
     if current_user:
         commenter = current_user.username
     else:
         commenter = data.nickname if data.nickname else ""
-    await wsService.notify_new_comment(article_id,comment.id,commenter,data.content,author_id)
+    # 异步通知
+    background_tasks.add_task(
+        notify_new_comment,article_id,comment.id,commenter,data.content,author_id
+    )
 
     return ResponseModel(data=CommentResponse.model_validate(comment))
 

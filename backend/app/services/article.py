@@ -204,7 +204,7 @@ class ArticleService:
             # 浏览量更新失败不应影响主流程，记录日志即可
             logger.warning(f"Failed to increment view count for article {article_id}: {e}")
         
-    async def update_article(self,user:User,article_id:int,data:ArticleUpdate,file:UploadFile,fileService:FileUploadService):
+    async def update_article(self,user:User,article_id:int,data:ArticleUpdate,file:UploadFile | None,fileService:FileUploadService):
         article = await self.get_by_id(article_id)
         if article.author_id != user.id:
             raise HTTPException(
@@ -213,17 +213,18 @@ class ArticleService:
             )
 
         cover_image = ""
-        old_pic = (article.cover_image).split("/")[-1] if article.cover_image else None
-        try:
-            file_info = await fileService.img_save(
-                file=file,
-                old_pic=old_pic,
-                del_flag=True,
-                subdir=settings.ARTICLE_PIC_NAME
-            )
-            cover_image = file_info["url"]
-        except HTTPException as e:
-            logger.error(f"文章封面上传失败：{str(e)}")
+        if file:
+            old_pic = (article.cover_image).split("/")[-1] if article.cover_image else None
+            try:
+                file_info = await fileService.img_save(
+                    file=file,
+                    old_pic=old_pic,
+                    del_flag=True,
+                    subdir=settings.ARTICLE_PIC_NAME
+                )
+                cover_image = file_info["url"]
+            except HTTPException as e:
+                logger.error(f"文章封面上传失败：{str(e)}")
 
         if data.title:
             article.title = data.title
@@ -336,30 +337,20 @@ class ArticleService:
     
     async def delete_tags(self,article_id:int,tag_id:int):
         article = await self.get_by_id(article_id,tag_flag=True)
-        to_remove = set()
-        to_remove.add(tag_id)
-        stored_tag_ids = set()
-        if article.tags is None:
+        if not article.tags:
             raise HTTPException(
-                status.HTTP_403_FORBIDDEN,
+                status.HTTP_400_BAD_REQUEST,
                 "当前文章无任何标签，无法移除！"
             )
         stored_tag_ids = {int(tag.id) for tag in article.tags}
-        to_remove = to_remove - stored_tag_ids
-
-        if to_remove is None:
+        if tag_id not in stored_tag_ids:
             raise HTTPException(
-                status.HTTP_403_FORBIDDEN,
-                "当前标签不属于该文章，无需移除！"
+                status.HTTP_400_BAD_REQUEST,
+                "当前标签不属于该文章，无法移除！"
             )
-        # 直接操作中间表删除（更高效）
-        stmt = delete(article_tags).where(
-            article_tags.c.article_id == article_id,
-            article_tags.c.tag_id.in_(to_remove)
-        )
-        await self.db.execute(stmt)
 
-        # 5. 提交事务
+        tag_to_remove = next(tag for tag in article.tags if tag.id == tag_id)
+        article.tags.remove(tag_to_remove)
         await self.db.commit()
         await self.db.refresh(article)
         return True

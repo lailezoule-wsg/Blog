@@ -12,15 +12,9 @@ from app.utils.exceptions import setup_exception_handlers
 
 from app.routers import user,tag,subscription,category,article,ws
 
-
-
 from app.utils.logging import setup_logging, get_logger
 
 from app.middles.request import RequestMiddleware
-
-
-
-
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -49,7 +43,7 @@ async def lifespan(app: FastAPI):
 app = FastAPI(
     title=settings.APP_NAME,
     description=settings.DESCRIPTION,
-    VERSION=settings.VERSION,
+    version=settings.VERSION,
     lifespan=lifespan
 )
 """

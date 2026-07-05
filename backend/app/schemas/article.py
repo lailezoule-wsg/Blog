@@ -94,6 +94,66 @@ class ArticleCreate(BaseModel):
             return [int(item) for item in parsed if item is not None]
         except (json.JSONDecodeError, ValueError, TypeError):
             return []
+        
+class ArticleUpdate(BaseModel):
+    title: str | None = None
+    content: str | None = None
+    summary: str | None = None
+    cover_image: str | None = None
+    category_id: int | None = None
+    # tag_ids: list[int] = Field(default_factory=list, description="标签列表")
+    is_private: bool | None = None
+
+    @classmethod
+    def as_form(
+        cls,
+        title: str = Form(..., description="文章标题"),
+        content: str = Form(..., description="文章内容"),
+        summary: Optional[str] = Form(None, description="文章摘要"),
+        cover_image: Optional[str] = Form(None, description="封面图路径"),
+        category_id: int = Form(..., description="分类ID"),
+        is_private: bool = Form(False, description="是否私密"),
+        # tag_ids: str = Form("[]", description="标签ID列表 (JSON数组)"),
+    ) -> "ArticleUpdate":
+        """
+        从 Form 表单数据创建 ArticleUpdate 实例
+        
+        用于支持文件上传的 multipart/form-data 请求
+        """
+        # 1. 解析 tag_ids
+        # tag_ids_list = cls._parse_tag_ids(tag_ids)
+        return cls(
+            title=title,
+            content=content,
+            summary=summary,
+            cover_image=cover_image,
+            category_id=category_id,
+            is_private=is_private,
+            # tag_ids=tag_ids_list,
+        )
+
+    @staticmethod
+    def _parse_tag_ids(tag_ids: str) -> list[int]:
+        """
+        解析 tag_ids JSON 字符串
+        
+        Args:
+            tag_ids: JSON 数组字符串，如 "[1,2,3]" 或 "[]"
+        
+        Returns:
+            List[int]: 标签ID列表
+        """
+        if not tag_ids or tag_ids.strip() == "":
+            return []
+        
+        try:
+            parsed = json.loads(tag_ids)
+            if not isinstance(parsed, list):
+                return []
+            # 确保所有元素都是整数
+            return [int(item) for item in parsed if item is not None]
+        except (json.JSONDecodeError, ValueError, TypeError):
+            return []
 
 class ArticleResponse(BaseModel):
     id: int = Field(..., description="文章ID")
@@ -147,14 +207,6 @@ class ArticleQuery(BaseModel):
     tag_id:int | None = None
     author_id:int | None = None
     q:str | None = None
-
-class ArticleUpdate(BaseModel):
-    title: str | None = None
-    content: str | None = None
-    summary: str | None = None
-    cover_image: str | None = None
-    category_id: int | None = None
-    is_private: bool | None = None
 
 class ArticlePublishResponse(BaseModel):
     id: int

@@ -14,7 +14,7 @@
             <el-option v-for="cat in categories" :key="cat.id" :label="cat.name" :value="cat.id" />
           </el-select>
         </el-form-item>
-        <el-form-item label="标签">
+        <el-form-item label="标签" v-if="!isEdit">
           <el-select v-model="form.tag_ids" multiple placeholder="选择标签">
             <el-option v-for="tag in tags" :key="tag.id" :label="tag.name" :value="tag.id" />
           </el-select>
@@ -92,8 +92,10 @@ const coverFile = ref<File | null>(null)
 const coverPreview = ref('')
 
 onMounted(async () => {
-  await Promise.all([fetchCategories(), fetchTags()])
-  if (isEdit.value) {
+  await fetchCategories()
+  if (!isEdit.value) {
+    await fetchTags()
+  } else {
     await fetchArticle()
   }
 })
@@ -124,7 +126,6 @@ async function fetchArticle() {
     form.content = article.content
     form.summary = article.summary || ''
     form.category_id = article.category_id
-    form.tag_ids = article.tags.map((t) => t.id)
     form.is_private = article.is_private
     if (article.cover_image) {
       coverPreview.value = `${API_BASE}${article.cover_image}`
@@ -183,7 +184,9 @@ async function saveArticle(publish: boolean) {
     if (form.summary) formData.append('summary', form.summary)
     if (form.category_id) formData.append('category_id', String(form.category_id))
     formData.append('is_private', String(form.is_private))
-    form.tag_ids.forEach(id => formData.append('tag_ids', String(id)))
+    if (!isEdit.value && form.tag_ids.length > 0) {
+      formData.append('tag_ids', JSON.stringify(form.tag_ids))
+    }
     if (coverFile.value) {
       formData.append('file', coverFile.value)
     }

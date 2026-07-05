@@ -1,13 +1,33 @@
-from typing import Optional
 from datetime import datetime, timedelta, timezone
 from jose import jwt, JWTError
 import bcrypt
 from fastapi import WebSocket
 import logging
+from passlib.context import CryptContext
 
 from app.config import settings
 
 logger = logging.getLogger(__name__)
+
+# 通过CryptContext 同一处理密码
+pwd_content = CryptContext(
+    schemes=["bcrypt"],
+    deprecated="auto",
+    bcrypt__rounds=12
+)
+
+"""
+hash_pwd 等效 hash_password
+verify_pwd 等效 verify_password
+"""
+
+# 加密
+def hash_pwd(pwd:str) -> str:
+    return pwd_content.hash(pwd)
+
+# 验证密码
+def verify_pwd(input_pwd:str,stored_pwd:str) -> bool:
+    return pwd_content.verify(input_pwd,stored_pwd)
 
 # 加密
 def hash_password(password: str) -> str:
@@ -56,8 +76,6 @@ def _extract_token(websocket: WebSocket) -> str | None:
     return None
 
 # ws token auth
-
-
 def _authenticate(token: str) -> int | None:
     try:
         logger.debug(f"Decoding token: {token[:20]}...")

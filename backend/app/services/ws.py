@@ -3,10 +3,8 @@ from datetime import datetime, timezone
 from fastapi import APIRouter, WebSocket, WebSocketDisconnect, status
 
 from app.utils.websocket import manager
-from app.utils.common import _authenticate, _extract_token
 from app.schemas.ws import (
     WSBaseMessage,
-    WSConnectMessage,
     WSCommentPubMessage,
     WSArticlePubMessage,
 )
@@ -16,12 +14,10 @@ from app.utils.logging import get_logger
 logger = get_logger(__name__)
 
 class WSService:
-    def __init__(self):
-        self.manager = manager
         
     # ============ 通知发送函数 ============
+    @staticmethod
     async def notify_new_comment(
-        self,
         article_id: int,
         comment_id: int,
         commenter: str,
@@ -45,7 +41,7 @@ class WSService:
                 data=ws_comment_msg,
             )
 
-            success = await self.manager.send_to_user(author_id, message.model_dump())
+            success = await manager.send_to_user(author_id, message.model_dump())
 
             if not success:
                 logger.warning(f"Failed to send new_comment notification to user_id={author_id}")
@@ -56,7 +52,12 @@ class WSService:
             logger.error(f"Error sending new_comment notification: {e}", exc_info=True)
             return False
         
-    async def notify_new_article(self,article_id: int, title: str, author: str) -> bool:
+    @staticmethod    
+    async def notify_new_article(
+        article_id: int, 
+        title: str, 
+        author: str
+    ) -> bool:
         """
         广播新文章通知给所有在线用户
         """
@@ -74,7 +75,7 @@ class WSService:
             )
 
             # 广播给所有在线用户
-            await self.manager.broadcast(message.model_dump())
+            await manager.broadcast(message.model_dump())
             logger.info(f"Broadcast new_article notification: article_id={article_id}")
             return True
 
