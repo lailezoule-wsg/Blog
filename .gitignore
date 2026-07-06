@@ -2,9 +2,6 @@
 .vscode
 __pycache__/
 *.pyc
-*.egg-info/
-dist/
-build/
 **/node_modules
 .env
 *.db
