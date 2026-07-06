@@ -9,11 +9,12 @@ logger = logging.getLogger(__name__)
 class ConnectionManager:
     def __init__(self):
         self._connections: Dict[int, WebSocket] = {}  # user_id -> WebSocket
-        self._lock = asyncio.Lock()
+        self._lock = asyncio.Lock() # 创建异步锁  全局唯一锁
 
     async def register(self, websocket: WebSocket, user_id: int) -> None:
         """注册连接"""
-        async with self._lock:
+        async with self._lock: # 获取锁
+            # 以下代码同一时间只能有一个协程执行 
             # 如果用户已有连接，先关闭旧连接
             if user_id in self._connections:
                 try:
