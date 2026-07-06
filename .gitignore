@@ -1,6 +1,6 @@
 .venv/
 .vscode
-**/__pycache__/
+__pycache__/
 *.pyc
 *.egg-info/
 dist/
@@ -9,3 +9,6 @@ build/
 .env
 *.db
 *.sqlite3
+./backend/logs/*
+./backend/uploads/
+*.log
