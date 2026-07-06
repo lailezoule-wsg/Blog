@@ -42,7 +42,19 @@ async def websocket_endpoint(websocket: WebSocket) -> None:
     
     # ===== 2. 接受连接 =====
     logger.info(f"✅ WebSocket accepted for user_id={user_id}")
+    """
     await websocket.accept()
+    # 作用：完成 WebSocket 握手（HTTP → WebSocket 协议升级）
+    # 结果：websocket 对象进入"已连接"状态，可以收发消息
+    # 保存了：连接状态、协议参数、底层网络连接
+    """
+    await websocket.accept()
+    """
+    await manager.register(websocket, user_id)
+    # 作用：将 websocket 对象注册到连接管理器
+    # 结果：websocket 被保存到管理器的字典中，供后续使用
+    # 保存了：user_id → websocket 的映射关系
+    """
     await manager.register(websocket, user_id)
     
     # ===== 3. 发送连接成功消息 =====
