@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 from pydantic_settings import BaseSettings
 
@@ -8,12 +9,18 @@ class Settings(BaseSettings):
     DESCRIPTION: str = "A simple blog application built with FastAPI."
     DEBUG: bool = True
 
-    # 数据库设置
-    DATABASE_URL: str = "sqlite+aiosqlite:///./test.db"
 
-    # JWT 设置
-    SECRET_KEY: str = "your-secret-key"
-    ALGORITHM: str = "HS256"
+    # 从环境变量获取数据库配置
+    DATABASE_URL: str = os.getenv("DATABASE_URL", "sqlite+aiosqlite:///./blog.db")
+    
+    # 从环境变量获取JWT配置
+    SECRET_KEY: str = os.getenv("SECRET_KEY", "your-default-secret-key")
+    ALGORITHM: str = os.getenv("ALGORITHM", "HS256")
+    ACCESS_TOKEN_EXPIRE_MINUTES: int = int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", "30"))
+
+    # Token 设置
+    ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
+    REFRESH_TOKEN_EXPIRE_DAYS: int = 7  # 7 days
 
     # websocket 设置
     WS_HEARTBEAT_INTERVAL: int = 30
@@ -24,9 +31,7 @@ class Settings(BaseSettings):
     LOG_DIR: Path = Path("./logs")
     LOG_USE_JSON: bool = False
 
-    # Token 设置
-    ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
-    REFRESH_TOKEN_EXPIRE_DAYS: int = 7  # 7 days
+    
 
     # 上传路径
     UPLOAD_DIR: str = "uploads"
